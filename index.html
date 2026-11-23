@@ -30,63 +30,63 @@
     /* ========================================================================= */
     :root,
     [data-theme="civic-standard"] {
-      --bg-canvas: #F5F0E7;
-      --bg-card: #FFFEFA;
-      --border-card: #E8DCCB;
-      --civic-dark: #98151B;
-      --civic-primary: #B5121B;
-      --bg-zebra: #FFFAF4;
-      --row-divider: #EDE3D7;
-      --day-bg: #F8F0E4;
-      --day-text: #8D421E;
-      --day-border: #D6A34A;
-      --today-bg: #FCEDE8;
-      --today-border: #B5121B;
-      --text-main: #29231F;
-      --text-muted: #6D6259;
-      --accent-gold: #D6A34A;
-      --note-bg: #FBF4E9;
-      --note-border: #EADCC7;
+      --bg-canvas: #EDF2F7;
+      --bg-card: #FFFFFF;
+      --border-card: #D8E3EE;
+      --civic-dark: #0B3866;
+      --civic-primary: #14538F;
+      --bg-zebra: #F7FAFD;
+      --row-divider: #E3ECF5;
+      --day-bg: #EBF2F9;
+      --day-text: #0B3866;
+      --day-border: #14538F;
+      --today-bg: #DFECF9;
+      --today-border: #0B3866;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --accent-gold: #D4A017;
+      --note-bg: #F1F6FB;
+      --note-border: #DCE6F1;
     }
 
     [data-theme="ocean-modern"] {
-      --bg-canvas: #F7F0E8;
+      --bg-canvas: #EEF4FA;
       --bg-card: #FFFFFF;
-      --border-card: #E9D8C8;
-      --civic-dark: #A32B24;
-      --civic-primary: #C23A2B;
-      --bg-zebra: #FFF8F2;
-      --row-divider: #F0E1D6;
-      --day-bg: #F9EDE3;
-      --day-text: #963B24;
-      --day-border: #D49A55;
-      --today-bg: #FCEAE5;
-      --today-border: #C23A2B;
-      --text-main: #2D2521;
-      --text-muted: #74645A;
-      --accent-gold: #D49A55;
-      --note-bg: #FCF3E9;
-      --note-border: #EEDCCB;
+      --border-card: #CFE0F0;
+      --civic-dark: #0D4478;
+      --civic-primary: #1765AD;
+      --bg-zebra: #F5FAFF;
+      --row-divider: #DFECF7;
+      --day-bg: #E7F2FC;
+      --day-text: #0D4478;
+      --day-border: #1765AD;
+      --today-bg: #D7EAFB;
+      --today-border: #0D4478;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --accent-gold: #C99712;
+      --note-bg: #EDF5FC;
+      --note-border: #D2E3F4;
     }
 
     [data-theme="slate-calm"] {
-      --bg-canvas: #F2EEE8;
-      --bg-card: #FFFEFC;
-      --border-card: #E2D8CE;
-      --civic-dark: #741E27;
-      --civic-primary: #922A34;
-      --bg-zebra: #FAF7F3;
-      --row-divider: #E9E0D8;
-      --day-bg: #F2EBE3;
-      --day-text: #702D31;
-      --day-border: #C29A63;
-      --today-bg: #F7E9E7;
-      --today-border: #922A34;
-      --text-main: #282321;
-      --text-muted: #6C625D;
-      --accent-gold: #C29A63;
-      --note-bg: #F6F0E8;
-      --note-border: #E5D9CA;
+      --bg-canvas: #E8EDF2;
+      --bg-card: #FFFFFF;
+      --border-card: #CFD9E3;
+      --civic-dark: #102A43;
+      --civic-primary: #1F4970;
+      --bg-zebra: #F6F8FA;
+      --row-divider: #DFE6EE;
+      --day-bg: #E6EDF4;
+      --day-text: #102A43;
+      --day-border: #1F4970;
+      --today-bg: #D8E3EE;
+      --today-border: #102A43;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --accent-gold: #C29216;
+      --note-bg: #EEF2F6;
+      --note-border: #D6E0EA;
     }
 
     html, body {
@@ -182,212 +182,275 @@
     .admin-scroll::-webkit-scrollbar-thumb:hover { background: #64748b; }
 
     #scrollTrack { will-change: transform; }
-  </style>
 
-  <style id="warm-civic-redesign">
-    /* Approved visual direction: warm ivory, traditional red and restrained gold. */
-    html, body { background: #F5F0E7 !important; color: #29231F; }
-    body { background-image: linear-gradient(180deg, #FBF8F2 0%, #F2ECE2 100%); }
-    .civic-card { border-color: #E8DCCB !important; box-shadow: 0 8px 26px rgba(94, 52, 26, .08) !important; }
-    .civic-bg-dark { background-color: var(--civic-dark) !important; }
-    .civic-bg-primary { background-color: var(--civic-primary) !important; }
-    .civic-border-gold { border-bottom: 3px solid var(--accent-gold) !important; }
 
-    /* Header: light editorial panel on the left, full original building photo on the right. */
-    #mainHeader {
-      height: 27vh !important;
-      min-height: 215px !important;
-      max-height: 320px !important;
-      background: linear-gradient(105deg, #FFFEFA 0%, #FBF6EC 62%, #F1E7D8 100%) !important;
-      border-bottom: 4px solid #D6A34A !important;
-      box-shadow: 0 5px 18px rgba(92, 47, 26, .10) !important;
-      isolation: isolate;
+    /* =====================================================================
+       APPROVED POSTER DESIGN — WARM IVORY / PARTY RED / MUTED GOLD
+       ===================================================================== */
+    :root,
+    [data-theme="civic-standard"],
+    [data-theme="ocean-modern"],
+    [data-theme="slate-calm"] {
+      --bg-canvas: #F7F1E7;
+      --bg-card: #FFFDFA;
+      --border-card: #E8D9C7;
+      --civic-dark: #9E1017;
+      --civic-primary: #B5121B;
+      --bg-zebra: #FFFAF3;
+      --row-divider: #EBDDCB;
+      --day-bg: #FBF2E5;
+      --day-text: #7D291B;
+      --day-border: #D8A34B;
+      --today-bg: #FCEBE6;
+      --today-border: #B5121B;
+      --text-main: #211D1A;
+      --text-muted: #645A52;
+      --accent-gold: #D5A044;
+      --note-bg: #FFF5E8;
+      --note-border: #E8D3B5;
     }
-    #mainHeader::before {
-      content: "";
-      position: absolute;
-      z-index: 0;
-      top: 0; right: 0; bottom: 0;
-      width: 40%;
-      background-image: var(--header-photo, url('./header-bg.jpg'));
-      background-size: cover;
-      background-position: center 48%;
-      filter: blur(13px) saturate(.82);
-      opacity: var(--header-photo-opacity, .28);
-      transform: scale(1.04);
+
+    *, *::before, *::after { box-sizing: border-box; }
+    .hidden, #headerImageFileInput { display: none !important; }
+    .opacity-0 { opacity: 0 !important; }
+    .opacity-100 { opacity: 1 !important; }
+    .pointer-events-none { pointer-events: none !important; }
+    html, body {
+      width: 100%; height: 100%; min-width: 0; min-height: 0;
+      overflow: hidden; background: #F7F1E7 !important;
+      color: #211D1A;
+    }
+    body { display:flex; flex-direction:column; background:linear-gradient(180deg,#FFFDF9 0%,#F6EFE4 100%) !important; }
+    .poster-header {
+      flex: 0 0 clamp(235px, 31vh, 340px);
+      min-height: 0; max-height: none; width:100%; display:grid;
+      grid-template-columns: 62% 38%; overflow:hidden; position:relative;
+      background:#FFF9EF; border-bottom:4px solid #D5A044;
+      box-shadow:0 5px 18px rgba(95,48,23,.11); isolation:isolate;
+    }
+    .poster-heading-panel {
+      min-width:0; height:100%; display:flex; flex-direction:column;
+      justify-content:flex-start; padding:clamp(20px,2.5vh,30px) clamp(24px,3.8vw,68px) 22px;
+      position:relative; z-index:2;
+      background:linear-gradient(112deg,#FFFEFA 0%,#FBF6EC 72%,#F7EEDF 100%);
+    }
+    .poster-heading-panel:after {
+      content:""; position:absolute; right:-1px; top:0; bottom:0; width:3px;
+      background:linear-gradient(180deg,transparent,#D7A348 18%,#D7A348 82%,transparent);
+    }
+    .poster-identity { display:flex; align-items:center; gap:clamp(14px,1.3vw,24px); min-width:0; }
+    .poster-flags { display:flex; align-items:center; flex:0 0 auto; padding-left:2px; }
+    .mini-flag {
+      width:clamp(42px,4.4vw,70px); height:clamp(30px,3.1vw,48px);
+      display:flex; align-items:center; justify-content:center; color:#F6D34F;
+      background:#C91420; box-shadow:0 3px 8px rgba(100,20,20,.15);
+      clip-path:polygon(0 0,100% 7%,91% 100%,0 88%); font-size:clamp(18px,1.6vw,27px);
+    }
+    .mini-flag + .mini-flag { margin-left:-8px; margin-top:9px; background:#D31923; }
+    .party-flag { transform:rotate(-4deg); }
+    .national-flag { transform:rotate(3deg); }
+    .poster-identity-copy { min-width:0; }
+    .poster-identity-copy h1 {
+      color:#A91019; margin:0; font-size:clamp(22px,2.05vw,39px);
+      font-weight:900; line-height:1.12; letter-spacing:.025em;
+      white-space:nowrap; text-shadow:none;
+    }
+    .poster-identity-copy p {
+      margin:8px 0 0; color:#8D4B1F; font-size:clamp(10px,.88vw,16px);
+      font-weight:700; letter-spacing:.045em; white-space:nowrap;
+    }
+    .poster-title-block { margin-top:clamp(34px,4.5vh,54px); padding-left:4px; }
+    .poster-title-block h2 {
+      margin:0 0 15px; color:#A91019; font-size:clamp(30px,3.15vw,58px);
+      font-weight:900; line-height:1.08; letter-spacing:.005em; white-space:nowrap;
+    }
+    .poster-week-pill {
+      display:inline-flex; align-items:center; gap:13px; max-width:100%;
+      min-height:44px; padding:7px 17px; border:1.5px solid #C94836;
+      border-radius:18px; background:rgba(255,253,248,.92);
+      color:#A91019; font-size:clamp(14px,1.18vw,22px); font-weight:700;
+      box-shadow:0 2px 5px rgba(116,44,24,.035);
+    }
+    .poster-week-pill #weekStringDisplay { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .poster-calendar-icon { color:#B5121B; font-size:26px; line-height:1; }
+    .poster-gold-rule { position:absolute; left:0; right:0; bottom:0; height:3px; background:#D5A044; }
+    .poster-photo-panel {
+      position:relative; min-width:0; height:100%; overflow:hidden;
+      background:#DED0B9; isolation:isolate;
+    }
+    .poster-photo-panel:before {
+      content:""; position:absolute; z-index:2; top:-2%; bottom:-2%; left:-1px; width:clamp(28px,4vw,72px);
+      background:linear-gradient(135deg,#E7B84F,#F9E6B9 48%,#D5A044);
+      clip-path:polygon(100% 0,100% 100%,0 100%);
+      opacity:.98; pointer-events:none;
     }
     #headerBgImg {
-      left: auto !important;
-      right: 0 !important;
-      top: 0 !important;
-      width: 40% !important;
-      height: 100% !important;
-      object-fit: contain !important;
-      object-position: center 42%;
-      padding: 8px 16px 10px !important;
-      box-sizing: border-box !important;
-      z-index: 2 !important;
-      filter: drop-shadow(0 5px 10px rgba(75, 39, 24, .13));
+      display:block !important; position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover !important; object-position:center 8% !important;
+      padding:0 !important; border:0; filter:saturate(1.03) contrast(1.01);
+      z-index:1; transition:object-position .2s ease;
     }
-    #headerGradientOverlay { display: none !important; }
-    #mainHeader > .relative.z-10 {
-      z-index: 5 !important;
-      padding-left: clamp(22px, 4vw, 72px) !important;
-      padding-right: 42% !important;
-      justify-content: flex-start !important;
+    .poster-photo-shade { display:none !important; }
+    .poster-photo-upload {
+      position:absolute; z-index:8; right:13px; top:12px; padding:7px 11px;
+      border:1px solid rgba(255,255,255,.72); border-radius:8px;
+      background:rgba(143,16,24,.86); color:#fff; font-size:11px; font-weight:700;
+      opacity:0; cursor:pointer; transition:opacity .2s;
     }
-    #mainHeader > .relative.z-10 > div:first-child { gap: 15px !important; max-width: 100%; }
-    #mainHeader .w-\[4px\] {
-      width: 5px !important;
-      border-radius: 5px !important;
-      background: linear-gradient(180deg, #B5121B 0%, #D6A34A 100%) !important;
-      box-shadow: 0 2px 10px rgba(181, 18, 27, .16) !important;
-      margin-top: 7px !important;
-      margin-bottom: 7px !important;
+    .poster-photo-panel:hover .poster-photo-upload,
+    .poster-photo-upload:focus-visible { opacity:1; }
+    .poster-clock-strip {
+      position:absolute; z-index:5; left:clamp(14px,3vw,48px); right:12px; bottom:11px;
+      min-height:48px; display:flex; align-items:center; gap:15px; padding:8px 18px;
+      color:#FFFCF4; background:linear-gradient(90deg,rgba(177,10,19,.97),rgba(137,8,17,.96));
+      border:1px solid rgba(255,222,160,.8); border-radius:12px;
+      box-shadow:0 4px 13px rgba(70,12,15,.24); white-space:nowrap;
     }
-    #mainHeader h1 {
-      color: #A50F18 !important;
-      font-size: clamp(24px, 2.05vw, 38px) !important;
-      font-weight: 900 !important;
-      letter-spacing: .025em !important;
-      line-height: 1.16 !important;
-      text-shadow: none !important;
-      white-space: nowrap;
+    .poster-clock-time { display:flex; align-items:center; gap:9px; }
+    .poster-clock-time strong { font-size:clamp(19px,1.55vw,29px); line-height:1; font-weight:900; font-variant-numeric:tabular-nums; }
+    .clock-symbol { color:#F7D25C; font-size:25px; }
+    .poster-clock-separator { height:28px; width:1px; background:rgba(255,240,215,.65); }
+    .poster-clock-date { font-size:clamp(11px,.95vw,17px); font-weight:700; }
+    .poster-clock-location { margin-left:auto; color:#FFF1D7; font-size:clamp(10px,.72vw,13px); font-weight:600; max-width:145px; overflow:hidden; text-overflow:ellipsis; }
+
+    .poster-main {
+      flex:1 1 auto; min-height:0; width:100%; padding:10px 14px 9px;
+      background:linear-gradient(180deg,#F8F2E9 0%,#FFFDF9 100%); overflow:hidden;
     }
-    #mainHeader .mt-1.flex.flex-wrap { margin-top: 13px !important; align-items: center !important; gap: 10px !important; }
-    #mainHeader .mt-1.flex.flex-wrap > span:first-child {
-      color: #7B201F !important;
-      font-size: clamp(17px, 1.3vw, 24px) !important;
-      letter-spacing: .035em !important;
-      font-weight: 800 !important;
-      text-shadow: none !important;
+    .poster-schedule-card {
+      display:flex; flex-direction:column; height:100%; min-height:0;
+      border:1px solid #E6CDA6; border-radius:12px; overflow:hidden;
+      background:#FFFDFA; box-shadow:0 4px 14px rgba(92,48,24,.055);
     }
-    #weekStringDisplay {
-      display: inline-flex !important;
-      align-items: center;
-      padding: 7px 13px !important;
-      border: 1px solid #DDBB83;
-      border-radius: 999px;
-      background: rgba(255, 252, 246, .88);
-      color: #9B341F !important;
-      font-size: clamp(12px, .92vw, 16px) !important;
-      font-weight: 700 !important;
-      text-shadow: none !important;
-      line-height: 1.3;
+    .poster-schedule-table { width:100%; table-layout:fixed; border-collapse:collapse; font-family:'Be Vietnam Pro',system-ui,sans-serif; }
+    .poster-table-head { flex:0 0 auto; }
+    .poster-table-head thead { background:#B5121B; color:#fff; }
+    .poster-table-head th {
+      height:54px; padding:8px 12px; text-align:center; vertical-align:middle;
+      font-size:clamp(11px,.95vw,18px); font-weight:900; letter-spacing:.025em;
+      border-right:1px solid rgba(255,255,255,.22); white-space:normal;
     }
-    #mainHeader > .relative.z-10 > div:last-child {
-      position: absolute !important;
-      right: 42.5% !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
-      align-items: flex-start !important;
-      padding: 11px 16px !important;
-      border: 1px solid rgba(255,255,255,.55) !important;
-      border-radius: 13px !important;
-      background: linear-gradient(135deg, rgba(181,18,27,.96), rgba(133,13,21,.94)) !important;
-      box-shadow: 0 7px 18px rgba(94, 22, 24, .18) !important;
-      backdrop-filter: blur(6px);
-      text-align: left !important;
+    .poster-table-head th:last-child { border-right:0; }
+    .poster-schedule-viewport { position:relative; flex:1 1 auto; min-height:0; overflow:hidden; background:#FFFDFA; }
+    .poster-scroll-track { width:100%; will-change:transform; }
+    .poster-body-table { width:100%; table-layout:fixed; border-collapse:collapse; }
+    .poster-body-table td {
+      padding:7px 9px; vertical-align:middle; border-right:1px solid #E8DED2;
+      border-bottom:1px solid #E9DFD4; color:#24201D;
+      font-size:clamp(11px,.88vw,15px); line-height:1.25; overflow-wrap:anywhere;
     }
-    #clockTime { color: #FFFDF8 !important; font-size: clamp(25px, 2.3vw, 42px) !important; text-shadow: none !important; letter-spacing: .035em !important; }
-    #clockDate { color: #FBE9D5 !important; font-size: clamp(11px, .8vw, 14px) !important; font-weight: 600 !important; }
-    #quickUploadHeaderBtn {
-      left: auto !important; right: 14px !important; top: 12px !important;
-      transform: none !important;
-      background: rgba(139, 18, 25, .88) !important;
-      border: 1px solid rgba(255,255,255,.7) !important;
-      box-shadow: 0 4px 12px rgba(75, 25, 20, .18) !important;
+    .poster-body-table td:last-child { border-right:0; }
+    .poster-body-table tr:nth-child(even) td { background:#FFFAF4; }
+    .poster-body-table tr:hover td { background:#FFF3E5; }
+    .poster-day-cell {
+      background:linear-gradient(180deg,#FFF9EF,#FBF2E5) !important;
+      text-align:center; border-right:1px solid #E8D7C1 !important;
+      padding:5px 6px !important;
+    }
+    .poster-day-cell.today { background:linear-gradient(180deg,#FFF0E8,#FCE8DF) !important; }
+    .poster-day-icon { display:block; color:#B5121B; font-size:21px; line-height:1; margin-bottom:2px; }
+    .poster-day-icon svg { width:20px; height:20px; }
+    .poster-day-name { display:block; color:#28211D; font-size:clamp(11px,.86vw,15px); font-weight:900; line-height:1.12; text-transform:uppercase; }
+    .poster-day-date { display:block; color:#2F2925; font-size:clamp(10px,.78vw,14px); margin-top:2px; font-weight:600; line-height:1.12; white-space:nowrap; }
+    .poster-day-cell.today .poster-day-name,
+    .poster-day-cell.today .poster-day-date { color:#A91019; }
+    .poster-time-cell { text-align:center; white-space:normal; font-weight:700; color:#29221D !important; font-variant-numeric:tabular-nums; }
+    .poster-content-cell { font-weight:600; }
+    .poster-place-cell, .poster-chair-cell, .poster-people-cell { font-weight:500; }
+    .poster-chair-cell { color:#6A2D27 !important; }
+    .poster-status-live {
+      display:inline-flex; margin-top:6px; align-items:center; gap:5px;
+      color:#A91019; background:#FCEBE6; border:1px solid #EFC5BA;
+      border-radius:999px; padding:2px 7px; font-size:10px; font-weight:800;
+    }
+    .poster-status-live:before { content:""; width:6px; height:6px; border-radius:50%; background:#B5121B; animation:dot-pulse 1.8s ease-in-out infinite; }
+    .poster-highlight-row td:not(.poster-day-cell) { color:#A91019; font-weight:700; background:#FFF0EB !important; }
+    .poster-highlight-row .poster-day-cell { background:#FCE9E4 !important; }
+    .poster-empty-state { padding:60px 20px; text-align:center; color:#786A5D; font-size:17px; font-weight:600; }
+    .poster-pause-indicator {
+      pointer-events:none; opacity:0; transition:opacity .25s; position:absolute; right:16px; bottom:13px;
+      z-index:10; display:flex; align-items:center; gap:8px; padding:8px 12px;
+      border-radius:999px; color:#fff; background:rgba(139,13,20,.92); font-size:11px; font-weight:700;
+    }
+    .poster-pause-indicator:not(.opacity-0) { opacity:1; }
+    .pause-dot { width:7px; height:7px; border-radius:50%; background:#F5D26A; }
+
+    .poster-footer {
+      flex:0 0 62px; min-height:50px; display:flex; align-items:center; gap:18px;
+      width:100%; padding:7px clamp(14px,2.8vw,44px);
+      color:#FFFCF4; background:linear-gradient(90deg,#B5121B 0%,#A10D16 52%,#920A12 100%);
+      border-top:2px solid #E0B44F; box-shadow:0 -3px 10px rgba(100,21,22,.08); z-index:30;
+    }
+    .poster-footer-status { display:flex; align-items:center; gap:8px; flex:0 0 auto; min-width:190px; font-size:clamp(10px,.78vw,14px); font-weight:700; white-space:nowrap; }
+    .footer-sync-icon { color:#F8D15B; font-size:24px; }
+    .poster-sync-dot { width:8px; height:8px; flex:0 0 8px; border-radius:50%; background:#75D6A0; box-shadow:0 0 0 3px rgba(117,214,160,.15); }
+    .poster-footer-marquee { flex:1 1 auto; min-width:80px; max-width:40%; color:#FFF2DE; font-size:clamp(10px,.78vw,14px); }
+    .poster-footer-lotus { flex:0 0 auto; color:#F4D15D; font-size:38px; line-height:1; text-shadow:0 1px 5px rgba(20,0,0,.15); }
+    .poster-footer-actions { display:flex; gap:8px; align-items:center; flex:0 0 auto; }
+    .poster-footer-actions button {
+      padding:7px 11px; border:1px solid rgba(255,224,166,.68); border-radius:8px;
+      background:rgba(255,255,255,.07); color:#FFF9EA; font-size:clamp(10px,.73vw,13px);
+      font-weight:700; white-space:nowrap; cursor:pointer; transition:background .2s,transform .2s;
+    }
+    .poster-footer-actions button:hover { background:rgba(255,255,255,.18); transform:translateY(-1px); }
+    .marquee-track { animation-duration:44s; }
+
+    /* Modal and welcome screen retain their existing functions, with matching warm colors. */
+    .civic-bg-dark { background-color:#9E1017 !important; }
+    .civic-bg-primary { background-color:#B5121B !important; }
+    .civic-text-primary { color:#A91019 !important; }
+    .civic-text-dark { color:#7D171B !important; }
+    .civic-border-gold { border-bottom-color:#D5A044 !important; }
+    #welcomeOverlay { background:#941018 !important; }
+    #welcomeOverlay h2 { color:#F4D16B !important; }
+    #adminModal .border-\[\#14538F\] { border-color:#B5121B !important; }
+
+    @media (max-width: 1100px) {
+      .poster-header { grid-template-columns:68% 32%; flex-basis:clamp(220px,31vh,300px); }
+      .poster-heading-panel { padding-left:24px; padding-right:18px; }
+      .poster-identity-copy h1 { font-size:clamp(19px,2vw,28px); }
+      .poster-title-block h2 { font-size:clamp(28px,3.2vw,42px); }
+      .poster-table-head th { padding:7px 6px; }
+      .poster-body-table td { padding:9px 7px; }
+      .poster-footer { gap:10px; }
+      .poster-footer-marquee { max-width:26%; }
     }
 
-    /* Schedule area and day separators. */
-    main.civic-canvas { background: transparent !important; padding: 10px 14px 12px !important; }
-    main > .flex-1.civic-card,
-    main > div:first-child { border-radius: 13px !important; overflow: hidden !important; }
-    main .grid.grid-cols-\[14\%_44\%_26\%_16\%\] {
-      background: linear-gradient(90deg, #B5121B 0%, #9E1018 100%) !important;
-      color: #FFFCF7 !important;
-      letter-spacing: .045em !important;
-      box-shadow: 0 3px 9px rgba(111, 20, 21, .12);
+    @media (min-aspect-ratio: 1.9/1) and (min-width: 1200px) {
+      .poster-header { grid-template-columns:62% 38%; flex-basis:clamp(224px,28vh,255px); }
+      .poster-photo-panel { background:#D9C7AA; }
+      #headerBgImg { object-fit:cover !important; object-position:center center !important; background:#D9C7AA; }
+      .poster-photo-panel:before { width:22px; }
+      .poster-heading-panel { padding:18px 40px 16px; }
+      .poster-title-block { margin-top:22px; }
+      .poster-title-block h2 { font-size:clamp(34px,2.7vw,50px); margin-bottom:10px; }
+      .poster-week-pill { min-height:40px; padding:5px 14px; }
+      .poster-day-cell { padding:4px 5px !important; }
+      .poster-day-icon svg { width:20px; height:20px; }
+      .poster-day-icon { margin-bottom:1px; }
+      .poster-day-name { font-size:clamp(10px,.72vw,14px); line-height:1.05; }
+      .poster-day-date { font-size:clamp(10px,.68vw,13px); margin-top:1px; line-height:1.05; }
+      .poster-body-table td { padding:5px 8px; font-size:clamp(11px,.72vw,14px); line-height:1.2; }
     }
-    main .grid.grid-cols-\[14\%_44\%_26\%_16\%\] > div {
-      padding-top: 14px !important;
-      padding-bottom: 14px !important;
-    }
-    #scheduleViewport { background: #FFFEFA !important; }
-    .civic-day-bar {
-      background: linear-gradient(90deg, #F8F0E4 0%, #FBF7F0 100%) !important;
-      color: #87371F !important;
-      border-left: 5px solid #D6A34A !important;
-      border-top: 1px solid #EFE3D5 !important;
-      border-bottom: 1px solid #EFE3D5 !important;
-    }
-    .civic-today-bar {
-      background: linear-gradient(90deg, #FBE9E4 0%, #FFF7F2 100%) !important;
-      color: #98151B !important;
-      border-left: 5px solid #B5121B !important;
-      border-top: 1px solid #EFD5CD !important;
-      border-bottom: 1px solid #EFD5CD !important;
-    }
-    .civic-row-even { background: #FFFEFB !important; }
-    .civic-row-odd { background: #FFFAF4 !important; }
-    .civic-row-border { border-bottom: 1px solid #EEE4D9 !important; }
-    #scrollTrack > div.grid { min-height: 68px; }
-    #scrollTrack > div.grid > div { padding-top: 15px !important; padding-bottom: 15px !important; }
-    .civic-text-primary { color: #A5121B !important; }
-    .civic-text-dark { color: #8F171D !important; }
-    .civic-text-muted { color: #6D6259 !important; }
-    .civic-note-pill { background: #FBF3E8 !important; border: 1px solid #EBDCC8 !important; color: #735D4B !important; }
-    #pauseIndicator { background: rgba(142, 17, 25, .92) !important; }
 
-    /* Running information bar. */
-    footer {
-      background: linear-gradient(90deg, #B5121B 0%, #8E0E17 100%) !important;
-      border-top: 2px solid #D6A34A !important;
-      color: #FFFCF6 !important;
-      min-height: 42px !important;
+    @media (max-width: 760px) {
+      html, body { overflow:auto; }
+      body { min-height:100vh; height:auto; }
+      .poster-header { flex-basis:auto; min-height:0; grid-template-columns:1fr; }
+      .poster-heading-panel { min-height:245px; padding:22px 18px; }
+      .poster-photo-panel { height:230px; }
+      .poster-clock-strip { left:10px; right:10px; gap:8px; padding:7px 10px; }
+      .poster-clock-location { display:none; }
+      .poster-main { overflow:visible; min-height:480px; padding:8px; }
+      .poster-schedule-card { min-height:450px; }
+      .poster-schedule-viewport { overflow:auto; }
+      .poster-table-head, .poster-body-table { min-width:1050px; }
+      .poster-footer { flex-wrap:wrap; min-height:75px; height:auto; padding:8px; }
+      .poster-footer-marquee, .poster-footer-lotus { display:none; }
+      .poster-footer-actions { flex-wrap:wrap; }
     }
-    footer .text-\[\#D6E6F5\], footer .text-\[\#EBF3FA\], footer .text-\[\#E8F1FA\] { color: #FFF5E9 !important; }
-    footer button { border-color: rgba(255,245,230,.28) !important; }
-    footer button:hover { background: rgba(255,255,255,.18) !important; }
 
-    /* Welcome mode follows the same identity. */
-    #welcomeOverlay { background: #86121A !important; }
-    #welcomeOverlay > img { opacity: .23 !important; object-fit: cover !important; }
-    #welcomeOverlay > div.absolute.inset-0 { background: radial-gradient(circle at center, rgba(166, 22, 31, .76) 0%, rgba(83, 10, 17, .97) 100%) !important; }
-    #welcomeOverlay > div.relative.z-10 { border-color: rgba(222,177,95,.9) !important; background: rgba(107, 12, 20, .62) !important; }
-    #welcomeOverlay h2 { color: #F2D28D !important; }
-
-    /* Admin window: use warm neutrals and red controls rather than blue defaults. */
-    #adminModal .civic-bg-dark { background: linear-gradient(90deg, #A7121A, #861018) !important; }
-    #adminModal .civic-bg-primary { background: #B5121B !important; }
-    #adminModal .civic-text-dark { color: #8F171D !important; }
-    #adminModal .civic-text-primary { color: #A5121B !important; }
-    #adminModal .border-\[\#14538F\] { border-color: #B5121B !important; }
-    #adminModal button:focus-visible, #adminModal input:focus-visible, #adminModal textarea:focus-visible { outline: 2px solid #D6A34A; outline-offset: 2px; }
-
-    @media (max-width: 900px) {
-      #mainHeader { height: 23vh !important; min-height: 170px !important; }
-      #headerBgImg, #mainHeader::before { width: 38% !important; }
-      #mainHeader > .relative.z-10 { padding-right: 40% !important; padding-left: 20px !important; }
-      #mainHeader > .relative.z-10 > div:last-child { right: 41% !important; }
-      #mainHeader h1 { white-space: normal; }
-      #mainHeader .mt-1.flex.flex-wrap { margin-top: 8px !important; }
-      main { padding-left: 7px !important; padding-right: 7px !important; }
-    }
-    @media (max-width: 640px) {
-      html, body { overflow: auto !important; height: auto !important; min-height: 100%; }
-      body { min-height: 100vh; }
-      #mainHeader { min-height: 220px !important; height: auto !important; }
-      #headerBgImg, #mainHeader::before { width: 40% !important; height: 100% !important; }
-      #mainHeader > .relative.z-10 { min-height: 220px; padding-right: 42% !important; padding-left: 14px !important; }
-      #mainHeader > .relative.z-10 > div:last-child { right: 43% !important; top: auto !important; bottom: 12px !important; transform: none !important; padding: 7px 10px !important; }
-      #clockTime { font-size: 22px !important; }
-      #clockDate { font-size: 10px !important; }
-      footer { height: auto !important; max-height: none !important; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
-      footer > div:last-child { display: none !important; }
-    }
   </style>
-
 </head>
 <body class="flex flex-col w-screen h-screen overflow-hidden civic-canvas">
 
@@ -395,184 +458,116 @@
   <input id="headerImageFileInput" type="file" accept="image/*" class="hidden" onchange="handleHeaderImageUpload(event)" />
 
   <!-- ===================================================================== -->
-  <!-- 1. HEADER (~16.5vh): ẢNH TRỤ SỞ + PHỦ XANH CÔNG VỤ + CHỈ VÀNG ĐỒNG    -->
+  <!-- 1. HEADER: NHẬN DIỆN CƠ QUAN + ẢNH TRỤ SỞ                           -->
   <!-- ===================================================================== -->
-  <header
-    id="mainHeader"
-    class="group relative w-full h-[16.5vh] min-h-[114px] max-h-[192px] shrink-0 overflow-hidden civic-bg-dark civic-border-gold shadow-md"
-  >
-    <!-- Ảnh toàn cảnh trụ sở (ưu tiên localStorage -> ./header-bg.jpg) -->
-    <img
-      id="headerBgImg"
-      src="./header-bg.jpg"
-      alt="Trụ sở Đảng ủy phường Quảng Yên"
-      class="absolute inset-0 w-full h-full object-cover transition-all duration-300"
-      style="object-position: center 42%;"
-      onload="onHeaderImageLoaded()"
-      onerror="onHeaderImageError()"
-    />
-
-    <!-- Lớp phủ gradient 3 vùng: trái 0.88 -> giữa 0.35 -> phải 0.84 -->
-    <div id="headerGradientOverlay" class="absolute inset-0 transition-all duration-200"></div>
-
-    <!-- Nút tải ảnh gọn gàng (tự ẩn khi đã có ảnh, hiện nhẹ khi rê chuột vào Header) -->
-    <button
-      id="quickUploadHeaderBtn"
-      onclick="triggerHeaderImageUpload()"
-      title="Chọn ảnh toàn cảnh trụ sở Đảng ủy phường từ máy tính"
-      class="absolute top-2.5 left-1/2 -translate-x-1/2 z-30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-white backdrop-blur-md shadow-md flex items-center gap-1.5 transition-all duration-300 cursor-pointer border border-white/30"
-      style="background-color: rgba(11, 56, 102, 0.85);"
-    >
-      <span>📷</span>
-      <span id="quickUploadBtnLabel">Tải ảnh trụ sở lên Header</span>
-    </button>
-
-    <!-- Nội dung chính của Header -->
-    <div class="relative z-10 h-full w-full px-6 lg:px-10 flex items-center justify-between gap-4">
-      <!-- BÊN TRÁI: Thanh nhấn dọc vàng-trắng + Tiêu đề cơ quan & Tuần công tác -->
-      <div class="flex items-stretch gap-4 min-w-0">
-        <div
-          class="w-[4px] rounded-full shrink-0 my-1"
-          style="background: linear-gradient(180deg, #D4A017 0%, #FFFFFF 100%); box-shadow: 0 0 8px rgba(212, 160, 23, 0.45);"
-        ></div>
-
-        <div class="flex flex-col justify-center min-w-0">
-          <h1
-            class="text-xl sm:text-2xl lg:text-3xl xl:text-[34px] font-extrabold text-white uppercase tracking-[0.06em] leading-tight truncate"
-            style="text-shadow: 0 1px 6px rgba(5, 24, 48, 0.75);"
-          >
-            ĐẢNG ỦY PHƯỜNG QUẢNG YÊN
-          </h1>
-
-          <div class="mt-1 flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5">
-            <span
-              class="text-sm sm:text-base lg:text-lg xl:text-[20px] font-bold text-[#F0F6FC] tracking-wide uppercase"
-              style="text-shadow: 0 1px 4px rgba(5, 24, 48, 0.7);"
-            >
-              LỊCH CÔNG TÁC TUẦN
-            </span>
-            <span
-              id="weekStringDisplay"
-              class="text-xs sm:text-sm lg:text-[16px] font-semibold text-[#F5D77F] tracking-wide"
-              style="text-shadow: 0 1px 4px rgba(5, 24, 48, 0.7);"
-            >
-              Đang tải dữ liệu...
-            </span>
-          </div>
+  <header id="mainHeader" class="poster-header group">
+    <section class="poster-heading-panel">
+      <div class="poster-identity">
+        <div class="poster-flags" aria-hidden="true">
+          <span class="mini-flag party-flag"><b>☭</b></span>
+          <span class="mini-flag national-flag"><b>★</b></span>
+        </div>
+        <div class="poster-identity-copy">
+          <h1>ĐẢNG ỦY PHƯỜNG QUẢNG YÊN</h1>
+          <p>ĐOÀN KẾT - DÂN CHỦ - KỶ CƯƠNG - ĐỘT PHÁ - PHÁT TRIỂN</p>
         </div>
       </div>
 
-      <!-- BÊN PHẢI: Đồng hồ điện tử thời gian thực -->
-      <div
-        class="shrink-0 flex flex-col items-end justify-center text-right rounded-xl px-4 lg:px-5 py-2 lg:py-2.5 border border-white/20 backdrop-blur-sm"
-        style="background-color: rgba(11, 56, 102, 0.4);"
-      >
-        <div
-          id="clockTime"
-          class="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-extrabold text-white leading-none tracking-wider tabular-nums"
-          style="text-shadow: 0 1px 6px rgba(5, 24, 48, 0.6);"
-        >
-          00:00:00
-        </div>
-        <div
-          id="clockDate"
-          class="mt-1.5 text-xs sm:text-sm lg:text-[15px] font-semibold text-[#D9E8F6] tracking-wide"
-        >
-          Thứ Hai, 23/11/2026
+      <div class="poster-title-block">
+        <h2>LỊCH CÔNG TÁC TUẦN</h2>
+        <div class="poster-week-pill">
+          <span class="poster-calendar-icon" aria-hidden="true">▦</span>
+          <span id="weekStringDisplay">Đang tải dữ liệu...</span>
         </div>
       </div>
-    </div>
+      <div class="poster-gold-rule"></div>
+    </section>
+
+    <section class="poster-photo-panel" aria-label="Ảnh trụ sở Đảng ủy phường Quảng Yên">
+      <img
+        id="headerBgImg"
+        src="./header-bg.jpg"
+        alt="Trụ sở Đảng ủy phường Quảng Yên"
+        onload="onHeaderImageLoaded()"
+        onerror="onHeaderImageError()"
+      />
+      <div id="headerGradientOverlay" class="poster-photo-shade"></div>
+      <button
+        id="quickUploadHeaderBtn"
+        onclick="triggerHeaderImageUpload()"
+        title="Chọn ảnh trụ sở Đảng ủy phường từ máy tính"
+        class="poster-photo-upload"
+      >📷 <span id="quickUploadBtnLabel">Đổi ảnh trụ sở</span></button>
+      <div class="poster-clock-strip">
+        <div class="poster-clock-time">
+          <span class="clock-symbol" aria-hidden="true">◷</span>
+          <strong id="clockTime">00:00:00</strong>
+        </div>
+        <span class="poster-clock-separator"></span>
+        <span id="clockDate" class="poster-clock-date">Thứ Hai, 23/11/2026</span>
+        <span class="poster-clock-location">Quảng Yên, Quảng Ninh</span>
+      </div>
+    </section>
   </header>
 
   <!-- ===================================================================== -->
-  <!-- 2. BẢNG LỊCH CÔNG TÁC TUẦN (~79vh)                                    -->
+  <!-- 2. BẢNG LỊCH CÔNG TÁC: BỐ CỤC 6 CỘT THEO MẪU ĐÃ DUYỆT               -->
   <!-- ===================================================================== -->
-  <main class="relative flex-1 flex flex-col w-full overflow-hidden p-2.5 lg:p-3.5 civic-canvas">
-    <div class="flex-1 flex flex-col w-full overflow-hidden rounded-[8px] civic-card">
-      <!-- Hàng tiêu đề 4 cột cố định -->
-      <div class="shrink-0 w-full grid grid-cols-[14%_44%_26%_16%] civic-bg-primary text-white font-bold uppercase tracking-wider text-xs sm:text-sm lg:text-[15px] xl:text-base z-20">
-        <div class="px-4 lg:px-5 py-3 border-r border-white/15 flex items-center">Thời gian</div>
-        <div class="px-4 lg:px-5 py-3 border-r border-white/15 flex items-center">Nội dung công tác</div>
-        <div class="px-4 lg:px-5 py-3 border-r border-white/15 flex items-center">Thành phần</div>
-        <div class="px-4 lg:px-5 py-3 flex items-center">Ghi chú</div>
-      </div>
+  <main class="poster-main">
+    <section class="poster-schedule-card">
+      <table class="poster-schedule-table poster-table-head" aria-hidden="true">
+        <colgroup>
+          <col style="width:13%" />
+          <col style="width:8%" />
+          <col style="width:31%" />
+          <col style="width:14%" />
+          <col style="width:13%" />
+          <col style="width:21%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>THỨ / NGÀY</th>
+            <th>THỜI GIAN</th>
+            <th>NỘI DUNG CÔNG VIỆC</th>
+            <th>ĐỊA ĐIỂM</th>
+            <th>CHỦ TRÌ</th>
+            <th>THÀNH PHẦN</th>
+          </tr>
+        </thead>
+      </table>
 
-      <!-- Khung Viewport cuộn mượt tự động -->
-      <div id="scheduleViewport" class="relative flex-1 w-full overflow-hidden bg-white">
-        <div id="scrollTrack" class="w-full">
-          <div class="py-20 text-center civic-text-muted text-base font-medium">
-            Đang kết nối Google Sheets để tải lịch công tác tuần...
-          </div>
+      <div id="scheduleViewport" class="poster-schedule-viewport">
+        <div id="scrollTrack" class="poster-scroll-track">
+          <div class="poster-empty-state">Đang kết nối Google Sheets để tải lịch công tác tuần...</div>
         </div>
-
-        <!-- Nhãn trạng thái nhỏ khi tạm dừng cuộn -->
-        <div
-          id="pauseIndicator"
-          class="pointer-events-none opacity-0 transition-opacity duration-300 absolute bottom-3 right-4 z-30 text-white text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-2"
-          style="background-color: rgba(11, 56, 102, 0.9);"
-        >
-          <span class="w-2 h-2 rounded-full" style="background-color: var(--accent-gold);"></span>
-          <span>Đang tạm dừng cuộn</span>
+        <div id="pauseIndicator" class="poster-pause-indicator opacity-0">
+          <span class="pause-dot"></span><span>Đang tạm dừng cuộn</span>
         </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- ===================================================================== -->
-  <!-- 3. FOOTER (~4.5vh): THÔNG BÁO CHẠY NGANG + TRẠNG THÁI ĐỒNG BỘ         -->
+  <!-- 3. FOOTER: TRẠNG THÁI, THÔNG ĐIỆP VÀ CÁC NÚT QUẢN TRỊ                -->
   <!-- ===================================================================== -->
-  <footer class="shrink-0 w-full h-[4.5vh] min-h-[38px] max-h-[48px] civic-bg-dark text-white px-4 lg:px-6 flex items-center justify-between gap-4 z-30 border-t border-white/10">
-    <!-- BÊN TRÁI: Trạng thái đồng bộ & Chữ chạy ngang -->
-    <div class="flex items-center gap-3 flex-1 min-w-0">
-      <div class="shrink-0 flex items-center gap-2 pr-3 border-r border-white/20">
-        <span id="syncDot" class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-        <span id="syncStatusText" class="text-[11px] lg:text-xs font-semibold text-[#D6E6F5] tracking-wide whitespace-nowrap">
-          Đang đồng bộ...
-        </span>
-      </div>
-
-      <div class="marquee-wrapper flex-1 text-xs sm:text-sm lg:text-[15px] font-medium text-[#EBF3FA]">
-        <div id="marqueeTrack" class="marquee-track">
-          <span>Đảng ủy phường Quảng Yên — Đoàn kết, kỷ cương, trách nhiệm, đổi mới, sáng tạo.</span>
-          <span>Đảng ủy phường Quảng Yên — Đoàn kết, kỷ cương, trách nhiệm, đổi mới, sáng tạo.</span>
-        </div>
+  <footer class="poster-footer">
+    <div class="poster-footer-status">
+      <span class="footer-sync-icon" aria-hidden="true">↻</span>
+      <span id="syncDot" class="poster-sync-dot"></span>
+      <span id="syncStatusText">Đang đồng bộ...</span>
+    </div>
+    <div class="poster-footer-marquee marquee-wrapper">
+      <div id="marqueeTrack" class="marquee-track">
+        <span>Đảng ủy phường Quảng Yên - Đoàn kết, dân chủ, kỷ cương, đột phá, phát triển.</span>
+        <span>Đảng ủy phường Quảng Yên - Đoàn kết, dân chủ, kỷ cương, đột phá, phát triển.</span>
       </div>
     </div>
-
-    <!-- BÊN PHẢI: Các nút điều khiển ẩn mờ (rõ khi rê chuột) -->
-    <div class="shrink-0 flex items-center gap-1.5 opacity-30 hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300">
-      <button
-        id="btnSyncNow"
-        onclick="fetchLiveSchedule(true)"
-        title="Đồng bộ dữ liệu ngay từ Google Sheets"
-        class="px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 text-[#E8F1FA] text-xs font-semibold border border-white/15 transition cursor-pointer"
-      >
-        ↻ Đồng bộ ngay
-      </button>
-
-      <button
-        onclick="toggleManualWelcome(true)"
-        title="Bật màn hình Chào mừng"
-        class="px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 text-[#F5D77F] text-xs font-semibold border border-white/15 transition cursor-pointer"
-      >
-        Chào mừng
-      </button>
-
-      <button
-        onclick="openAdminModal('zalo')"
-        title="Quản trị & Nhập nhanh từ Zalo"
-        class="px-2.5 py-1 rounded-md bg-white/15 hover:bg-white/25 text-white text-xs font-bold border border-white/25 transition cursor-pointer"
-      >
-        Quản trị / Zalo
-      </button>
-
-      <button
-        onclick="toggleFullscreen()"
-        title="Bật / Tắt toàn màn hình TV"
-        class="px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 text-[#E8F1FA] text-xs font-semibold border border-white/15 transition cursor-pointer"
-      >
-        ⛶ Toàn màn hình
-      </button>
+    <div class="poster-footer-lotus" aria-hidden="true">❀</div>
+    <div class="poster-footer-actions">
+      <button id="btnSyncNow" onclick="fetchLiveSchedule(true)" title="Đồng bộ dữ liệu ngay">↻ Đồng bộ</button>
+      <button onclick="toggleManualWelcome(true)" title="Bật màn hình chào mừng">✦ Chào mừng</button>
+      <button onclick="openAdminModal('zalo')" title="Quản trị và nhập lịch từ Zalo">⚙ Quản trị</button>
+      <button onclick="toggleFullscreen()" title="Bật hoặc tắt toàn màn hình">⛶ Toàn màn hình</button>
     </div>
   </footer>
 
@@ -593,12 +588,12 @@
     />
     <div
       class="absolute inset-0"
-      style="background: radial-gradient(circle at center, rgba(159, 24, 30, 0.70) 0%, rgba(93, 13, 20, 0.96) 100%);"
+      style="background: radial-gradient(circle at center, rgba(18, 78, 138, 0.72) 0%, rgba(11, 56, 102, 0.96) 100%);"
     ></div>
 
     <div
       class="relative z-10 w-[88vw] max-w-5xl mx-auto p-3 rounded-2xl backdrop-blur-sm shadow-2xl"
-      style="border: 2px solid rgba(212, 160, 23, 0.85); background-color: rgba(112, 15, 22, 0.58);"
+      style="border: 2px solid rgba(212, 160, 23, 0.85); background-color: rgba(11, 56, 102, 0.55);"
     >
       <div
         class="rounded-xl px-8 sm:px-14 py-12 sm:py-16 flex flex-col items-center"
@@ -617,7 +612,7 @@
         <h2
           id="welcomeHeadlineDisplay"
           class="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-black uppercase leading-tight tracking-wide"
-          style="color: #F3D58D; text-shadow: 0 3px 14px rgba(5, 24, 48, 0.65);"
+          style="color: #F2CA52; text-shadow: 0 3px 14px rgba(5, 24, 48, 0.65);"
         >
           NHIỆT LIỆT CHÀO MỪNG
         </h2>
@@ -840,39 +835,39 @@ THỨ HAI - 23/11/2026
 
           <!-- 2. Chọn 1 trong 3 bảng màu công vụ -->
           <div class="space-y-2.5">
-            <h4 class="text-sm font-extrabold civic-text-dark">2. Bảng màu nhận diện (Đỏ – Ngà – Vàng đồng)</h4>
+            <h4 class="text-sm font-extrabold civic-text-dark">2. Bảng màu chuẩn Công vụ (60–30–10)</h4>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
               <button type="button" id="themeCard-civic-standard" onclick="selectThemePreset('civic-standard')" class="text-left p-3 rounded-xl border-2 transition cursor-pointer bg-white">
                 <div class="flex items-center gap-1.5 mb-2">
-                  <span class="w-5 h-5 rounded" style="background:#98151B;"></span>
-                  <span class="w-5 h-5 rounded" style="background:#B5121B;"></span>
-                  <span class="w-5 h-5 rounded border border-slate-200" style="background:#F5F0E7;"></span>
-                  <span class="w-5 h-5 rounded" style="background:#D6A34A;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#A91019;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#C6262E;"></span>
+                  <span class="w-5 h-5 rounded border border-slate-200" style="background:#FFF7EA;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#D5A044;"></span>
                 </div>
-                <div class="text-xs font-bold text-[#0B3866]">Đỏ Ngà Trang trọng</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">Mặc định • Sáng, trang trọng, dễ nhìn</div>
+                <div class="text-xs font-bold text-[#0B3866]">Đỏ Đô Trang trọng</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Mặc định • Sáng, trang trọng, dễ đọc</div>
               </button>
 
               <button type="button" id="themeCard-ocean-modern" onclick="selectThemePreset('ocean-modern')" class="text-left p-3 rounded-xl border-2 transition cursor-pointer bg-white">
                 <div class="flex items-center gap-1.5 mb-2">
-                  <span class="w-5 h-5 rounded" style="background:#A32B24;"></span>
-                  <span class="w-5 h-5 rounded" style="background:#C23A2B;"></span>
-                  <span class="w-5 h-5 rounded border border-slate-200" style="background:#F7F0E8;"></span>
-                  <span class="w-5 h-5 rounded" style="background:#D49A55;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#B63A2E;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#D46A4D;"></span>
+                  <span class="w-5 h-5 rounded border border-slate-200" style="background:#FAF0E5;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#CFA15B;"></span>
                 </div>
-                <div class="text-xs font-bold text-[#0D4478]">Đỏ Gạch Hiện đại</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">Ấm áp • Tương phản rõ</div>
+                <div class="text-xs font-bold text-[#0D4478]">Đỏ Gạch Ấm áp</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Tươi sáng • Tương phản dịu</div>
               </button>
 
               <button type="button" id="themeCard-slate-calm" onclick="selectThemePreset('slate-calm')" class="text-left p-3 rounded-xl border-2 transition cursor-pointer bg-white">
                 <div class="flex items-center gap-1.5 mb-2">
-                  <span class="w-5 h-5 rounded" style="background:#741E27;"></span>
-                  <span class="w-5 h-5 rounded" style="background:#922A34;"></span>
-                  <span class="w-5 h-5 rounded border border-slate-200" style="background:#F2EEE8;"></span>
-                  <span class="w-5 h-5 rounded" style="background:#C29A63;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#7D1720;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#A64045;"></span>
+                  <span class="w-5 h-5 rounded border border-slate-200" style="background:#F2EAE0;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#B68A57;"></span>
                 </div>
-                <div class="text-xs font-bold text-[#102A43]">Đỏ Trầm Cổ điển</div>
-                <div class="text-[11px] text-slate-500 mt-0.5">Điềm đạm • Trang nhã</div>
+                <div class="text-xs font-bold text-[#102A43]">Đỏ Trầm Dịu mắt</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Chống chói tối đa 24/7</div>
               </button>
             </div>
           </div>
@@ -897,7 +892,7 @@ THỨ HAI - 23/11/2026
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
               <div class="bg-white rounded-lg p-3 border border-slate-200">
                 <div class="flex justify-between text-xs font-bold mb-1">
-                  <span>Vị trí ảnh trụ sở</span>
+                  <span>Vị trí dọc ảnh nền</span>
                   <span id="bgPosYValue" class="civic-text-primary tabular-nums">42%</span>
                 </div>
                 <input id="cfgBgPosY" type="range" min="0" max="100" value="42" oninput="onSliderLivePreview()" class="w-full accent-[#14538F] cursor-pointer" />
@@ -905,7 +900,7 @@ THỨ HAI - 23/11/2026
 
               <div class="bg-white rounded-lg p-3 border border-slate-200">
                 <div class="flex justify-between text-xs font-bold mb-1">
-                  <span>Độ đậm nền ảnh phụ</span>
+                  <span>Độ đậm lớp phủ xanh</span>
                   <span id="overlayDarknessValue" class="civic-text-primary tabular-nums">88%</span>
                 </div>
                 <input id="cfgOverlayDarkness" type="range" min="40" max="100" value="88" oninput="onSliderLivePreview()" class="w-full accent-[#14538F] cursor-pointer" />
@@ -952,13 +947,13 @@ THỨ HAI - 23/11/2026
     const LS_KEYS = {
       SETTINGS: 'qy_tv_local_settings_v4',
       CACHE: 'qy_tv_api_cache_v4',
-      HEADER_IMG: 'qy_tv_header_img_v4',
+      HEADER_IMG: 'qy_tv_header_img_v5',
     };
 
     const THEME_DARK_RGB = {
-      'civic-standard': '152, 21, 27',
-      'ocean-modern': '163, 43, 36',
-      'slate-calm': '116, 30, 39',
+      'civic-standard': '158, 16, 23',
+      'ocean-modern': '181, 18, 27',
+      'slate-calm': '125, 23, 27',
     };
 
     // Cài đặt cục bộ trên trình duyệt TV
@@ -1162,100 +1157,79 @@ THỨ HAI - 23/11/2026
       renderScheduleTable();
     }
 
+    function splitScheduleDay(dayValue) {
+      const raw = String(dayValue || 'LỊCH CÔNG TÁC').trim();
+      const dateMatch = raw.match(/(\d{1,2}\/\d{1,2}(?:\/\d{2,4})?)/);
+      let dayName = raw;
+      if (dateMatch) dayName = raw.replace(/\s*[-–|,]?\s*\d{1,2}\/\d{1,2}(?:\/\d{2,4})?.*$/, '').trim();
+      dayName = dayName.replace(/\s*[-–|]+\s*$/, '').trim();
+      return { dayName: dayName || 'LỊCH CÔNG TÁC', dateText: dateMatch ? dateMatch[1] : '' };
+    }
+
     function renderScheduleTable() {
       const viewport = document.getElementById('scheduleViewport');
       const track = document.getElementById('scrollTrack');
-      const items = liveData.schedule || [];
+      const items = Array.isArray(liveData.schedule) ? liveData.schedule : [];
 
       if (!items.length) {
-        track.innerHTML = `
-          <div class="py-20 text-center civic-text-muted text-lg font-medium">
-            Chưa có lịch công tác trong tuần trên Google Sheets.
-          </div>
-        `;
+        track.innerHTML = '<div class="poster-empty-state">Chưa có lịch công tác trong tuần trên Google Sheets.</div>';
         shouldScroll = false;
+        maxScrollable = 0;
         track.style.transform = 'translate3d(0, 0px, 0)';
         return;
       }
 
-      // Nhóm theo ngày (day)
       const groups = [];
       const groupMap = new Map();
       items.forEach((item) => {
-        const key = (item.day || 'LỊCH CÔNG TÁC').trim();
+        const key = String(item.day || 'LỊCH CÔNG TÁC').trim();
         if (!groupMap.has(key)) {
-          const g = { day: key, isToday: isDayStringToday(key), items: [] };
-          groupMap.set(key, g);
-          groups.push(g);
+          const parts = splitScheduleDay(key);
+          const group = { day: key, dayName: parts.dayName, dateText: parts.dateText, isToday: isDayStringToday(key), items: [] };
+          groupMap.set(key, group);
+          groups.push(group);
         }
         groupMap.get(key).items.push(item);
       });
 
-      let html = '';
       let rowIdx = 0;
-
+      let bodyRows = '';
       groups.forEach((group) => {
-        const barClass = group.isToday ? 'civic-today-bar' : 'civic-day-bar';
-        html += `
-          <div class="w-full px-4 lg:px-5 py-2.5 flex items-center justify-between ${barClass}">
-            <div class="flex items-center gap-3">
-              <span class="text-sm sm:text-base lg:text-[17px] xl:text-[18px] font-extrabold uppercase tracking-wide">
-                ${escapeHtml(group.day)}
-              </span>
-              ${
-                group.isToday
-                  ? '<span class="px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider text-white civic-bg-dark">Hôm nay</span>'
-                  : ''
-              }
-            </div>
-            <span class="text-xs lg:text-sm font-semibold civic-text-muted">${group.items.length} nội dung</span>
-          </div>
-        `;
-
-        group.items.forEach((item) => {
-          const rowBg = rowIdx % 2 === 1 ? 'civic-row-odd' : 'civic-row-even';
-          rowIdx++;
-
+        group.items.forEach((item, itemIdx) => {
           const status = getSlotStatus(group.day, item.time);
-          const opacityClass = status === 'done' ? 'opacity-60' : '';
-          const statusBadge =
-            status === 'live'
-              ? `<div class="mt-1.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wide w-fit"
-                      style="color:#B91C1C; background-color:#FEF2F2; border:1px solid #FECACA;">
-                   <span class="w-1.5 h-1.5 rounded-full animate-live-dot" style="background-color:#B91C1C;"></span>
-                   Đang diễn ra
-                 </div>`
-              : '';
-
-          html += `
-            <div class="w-full grid grid-cols-[14%_44%_26%_16%] civic-row-border ${rowBg} ${opacityClass}">
-              <div class="px-4 lg:px-5 py-3.5 lg:py-4 border-r border-[#E6EEF6] flex flex-col justify-center">
-                <span class="text-sm sm:text-base lg:text-[17px] xl:text-[19px] font-bold civic-text-primary tabular-nums leading-snug">
-                  ${escapeHtml(item.time)}
-                </span>
-                ${statusBadge}
-              </div>
-              <div class="px-4 lg:px-5 py-3.5 lg:py-4 border-r border-[#E6EEF6] flex items-center">
-                <p class="text-sm sm:text-base lg:text-[17px] xl:text-[19px] font-medium civic-text-main leading-relaxed">
-                  ${escapeHtml(item.content)}
-                </p>
-              </div>
-              <div class="px-4 lg:px-5 py-3.5 lg:py-4 border-r border-[#E6EEF6] flex items-center">
-                <p class="text-xs sm:text-sm lg:text-[15px] xl:text-[17px] font-normal civic-text-muted leading-relaxed">
-                  ${escapeHtml(item.participants)}
-                </p>
-              </div>
-              <div class="px-4 lg:px-5 py-3.5 lg:py-4 flex items-center">
-                <span class="inline-block px-2.5 py-1 rounded-md civic-note-pill text-xs sm:text-sm lg:text-[14px] xl:text-[15px] font-semibold leading-snug">
-                  ${escapeHtml(item.note || '—')}
-                </span>
-              </div>
-            </div>
-          `;
+          const highlight = /20\/11|ngày nhà giáo/i.test(`${group.day} ${item.content || ''}`);
+          const rowClass = `${highlight ? 'poster-highlight-row' : ''}`;
+          const location = item.location || item.place || item.address || item.note || '—';
+          const chair = item.chair || item.presider || item.leader || item.host || '—';
+          const participants = item.participants || item.attendees || '—';
+          const dayCell = itemIdx === 0 ? `
+            <td rowspan="${group.items.length}" class="poster-day-cell ${group.isToday ? 'today' : ''}">
+              <span class="poster-day-icon" aria-hidden="true"><svg viewBox="0 0 32 32" width="27" height="27" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="6" width="24" height="22" rx="3" stroke="currentColor" stroke-width="2.2"/><path d="M10 3v6M22 3v6M4 12h24M10 17h2M16 17h2M22 17h1M10 22h2M16 22h2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+              <span class="poster-day-name">${escapeHtml(group.dayName)}</span>
+              <span class="poster-day-date">${escapeHtml(group.dateText || ' ')}</span>
+            </td>` : '';
+          const statusBadge = status === 'live' ? '<span class="poster-status-live">ĐANG DIỄN RA</span>' : '';
+          bodyRows += `
+            <tr class="${rowClass}">
+              ${dayCell}
+              <td class="poster-time-cell">${escapeHtml(item.time || '—')}${statusBadge}</td>
+              <td class="poster-content-cell">${escapeHtml(item.content || '—')}</td>
+              <td class="poster-place-cell">${escapeHtml(location)}</td>
+              <td class="poster-chair-cell">${escapeHtml(chair)}</td>
+              <td class="poster-people-cell">${escapeHtml(participants)}</td>
+            </tr>`;
+          rowIdx++;
         });
       });
 
-      track.innerHTML = html;
+      track.innerHTML = `
+        <table class="poster-schedule-table poster-body-table" aria-label="Nội dung lịch công tác tuần">
+          <colgroup>
+            <col style="width:13%" /><col style="width:8%" /><col style="width:31%" />
+            <col style="width:14%" /><col style="width:13%" /><col style="width:21%" />
+          </colgroup>
+          <tbody>${bodyRows}</tbody>
+        </table>`;
       track.style.transform = 'translate3d(0, 0px, 0)';
 
       requestAnimationFrame(() => {
@@ -1338,8 +1312,6 @@ THỨ HAI - 23/11/2026
       const headerImg = document.getElementById('headerBgImg');
       const headerOverlay = document.getElementById('headerGradientOverlay');
       if (headerImg) headerImg.style.objectPosition = `center ${posY}%`;
-      const mainHeader = document.getElementById('mainHeader');
-      if (mainHeader) mainHeader.style.setProperty('--header-photo-opacity', String(0.10 + (Number(darkness || 88) / 100) * 0.30));
       if (headerOverlay) headerOverlay.style.background = grad;
     }
 
@@ -1350,8 +1322,6 @@ THỨ HAI - 23/11/2026
     }
 
     function setHeaderImages(src) {
-      const mainHeader = document.getElementById('mainHeader');
-      if (mainHeader) mainHeader.style.setProperty('--header-photo', `url(\"${src}\")`);
       ['headerBgImg', 'welcomeBgImg'].forEach((id) => {
         const img = document.getElementById(id);
         if (img) {
@@ -1561,6 +1531,7 @@ THỨ BA - 24/11/2026
             content: p[1] || '',
             participants: p[2] || '',
             note: p[3] || '',
+            chair: p[4] || '',
           });
           return;
         }
@@ -1572,12 +1543,15 @@ THỨ BA - 24/11/2026
           let rest = timeMatch[2].trim();
           let participants = '';
           let note = '';
+          let chair = '';
 
           const tp = rest.match(/(?:TP|Thành phần)\s*:\s*([^.;\n]+)/i);
           if (tp) { participants = tp[1].trim(); rest = rest.replace(tp[0], '').trim(); }
 
           const dd = rest.match(/(?:ĐĐ|Địa điểm|Ghi chú)\s*:\s*([^.;\n]+)/i);
           if (dd) { note = dd[1].trim(); rest = rest.replace(dd[0], '').trim(); }
+          const ch = rest.match(/(?:Chủ trì|Người chủ trì)\s*:\s*([^.;\n]+)/i);
+          if (ch) { chair = ch[1].trim(); rest = rest.replace(ch[0], '').trim(); }
 
           results.push({
             day: currentDay,
@@ -1585,6 +1559,7 @@ THỨ BA - 24/11/2026
             content: rest.replace(/^[-–.;,\s]+|[-–.;,\s]+$/g, ''),
             participants,
             note,
+            chair,
           });
         }
       });
