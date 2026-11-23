@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="only light" />
   <title>Lịch Công Tác Tuần - Đảng Ủy Phường Quảng Yên</title>
 
   <!-- Google Fonts: Be Vietnam Pro -->
@@ -25,6 +26,12 @@
   </script>
 
   <style>
+    /* TV/browser compatibility: preserve the approved light palette. */
+    :root, html, body {
+      color-scheme: only light !important;
+      forced-color-adjust: none;
+    }
+
     /* ========================================================================= */
     /* 3 BẢNG MÀU CHUẨN CỔNG THÔNG TIN ĐIỆN TỬ CÔNG VỤ (60-30-10)                */
     /* ========================================================================= */
@@ -311,7 +318,7 @@
     .clock-symbol { color:#F7D25C; font-size:25px; }
     .poster-clock-separator { height:28px; width:1px; background:rgba(255,240,215,.65); }
     .poster-clock-date { font-size:clamp(11px,.95vw,17px); font-weight:700; }
-    .poster-clock-location { margin-left:auto; color:#FFF1D7; font-size:clamp(10px,.72vw,13px); font-weight:600; max-width:145px; overflow:hidden; text-overflow:ellipsis; }
+    .poster-clock-location { margin-left:auto; color:#FFF1D7; font-size:clamp(10px,.72vw,13px); font-weight:600; max-width:105px; overflow:hidden; text-overflow:ellipsis; }
 
     .poster-main {
       flex:1 1 auto; min-height:0; width:100%; padding:10px 14px 9px;
@@ -337,7 +344,7 @@
     .poster-body-table td {
       padding:7px 9px; vertical-align:middle; border-right:1px solid #E8DED2;
       border-bottom:1px solid #E9DFD4; color:#24201D;
-      font-size:clamp(11px,.88vw,15px); line-height:1.25; overflow-wrap:anywhere;
+      font-size:clamp(11px,.88vw,15px); line-height:1.32; overflow-wrap:anywhere;
     }
     .poster-body-table td:last-child { border-right:0; }
     .poster-body-table tr:nth-child(even) td { background:#FFFAF4; }
@@ -345,13 +352,13 @@
     .poster-day-cell {
       background:linear-gradient(180deg,#FFF9EF,#FBF2E5) !important;
       text-align:center; border-right:1px solid #E8D7C1 !important;
-      padding:5px 6px !important;
+      padding:10px 7px !important;
     }
     .poster-day-cell.today { background:linear-gradient(180deg,#FFF0E8,#FCE8DF) !important; }
-    .poster-day-icon { display:block; color:#B5121B; font-size:21px; line-height:1; margin-bottom:2px; }
-    .poster-day-icon svg { width:20px; height:20px; }
-    .poster-day-name { display:block; color:#28211D; font-size:clamp(11px,.86vw,15px); font-weight:900; line-height:1.12; text-transform:uppercase; }
-    .poster-day-date { display:block; color:#2F2925; font-size:clamp(10px,.78vw,14px); margin-top:2px; font-weight:600; line-height:1.12; white-space:nowrap; }
+    .poster-day-icon { display:block; color:#B5121B; font-size:23px; line-height:1; margin-bottom:4px; }
+    .poster-day-icon svg { width:23px; height:23px; }
+    .poster-day-name { display:block; color:#28211D; font-size:clamp(11px,.88vw,16px); font-weight:900; line-height:1.3; text-transform:uppercase; }
+    .poster-day-date { display:block; color:#2F2925; font-size:clamp(10px,.82vw,14px); margin-top:3px; font-weight:600; white-space:nowrap; }
     .poster-day-cell.today .poster-day-name,
     .poster-day-cell.today .poster-day-date { color:#A91019; }
     .poster-time-cell { text-align:center; white-space:normal; font-weight:700; color:#29221D !important; font-variant-numeric:tabular-nums; }
@@ -425,12 +432,12 @@
       .poster-title-block { margin-top:22px; }
       .poster-title-block h2 { font-size:clamp(34px,2.7vw,50px); margin-bottom:10px; }
       .poster-week-pill { min-height:40px; padding:5px 14px; }
-      .poster-day-cell { padding:4px 5px !important; }
+      .poster-day-cell { padding:5px 5px !important; }
       .poster-day-icon svg { width:20px; height:20px; }
-      .poster-day-icon { margin-bottom:1px; }
-      .poster-day-name { font-size:clamp(10px,.72vw,14px); line-height:1.05; }
-      .poster-day-date { font-size:clamp(10px,.68vw,13px); margin-top:1px; line-height:1.05; }
-      .poster-body-table td { padding:5px 8px; font-size:clamp(11px,.72vw,14px); line-height:1.2; }
+      .poster-day-icon { margin-bottom:2px; }
+      .poster-day-name { font-size:clamp(10px,.72vw,14px); line-height:1.15; }
+      .poster-day-date { font-size:clamp(10px,.68vw,13px); margin-top:2px; line-height:1.15; }
+      .poster-body-table td { padding:6px 8px; font-size:clamp(11px,.72vw,14px); line-height:1.25; }
     }
 
     @media (max-width: 760px) {
@@ -947,7 +954,7 @@ THỨ HAI - 23/11/2026
     const LS_KEYS = {
       SETTINGS: 'qy_tv_local_settings_v4',
       CACHE: 'qy_tv_api_cache_v4',
-      HEADER_IMG: 'qy_tv_header_img_v5',
+      HEADER_IMG: 'qy_tv_header_img_v4',
     };
 
     const THEME_DARK_RGB = {
