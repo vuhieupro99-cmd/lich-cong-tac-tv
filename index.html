@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lịch Công Tác Tuần - Đảng Ủy Phường Quảng Yên</title>
+
+  <!-- Google Fonts: Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ========================================================================= */
+    /* 3 BẢNG MÀU CHUẨN CỔNG THÔNG TIN ĐIỆN TỬ CÔNG VỤ (60-30-10)                */
+    /* ========================================================================= */
+    :root,
+    [data-theme="civic-standard"] {
+      --bg-canvas: #EDF2F7;
+      --bg-card: #FFFFFF;
+      --border-card: #D8E3EE;
+      --civic-dark: #0B3866;
+      --civic-primary: #14538F;
+      --bg-zebra: #F7FAFD;
+      --row-divider: #E3ECF5;
+      --day-bg: #EBF2F9;
+      --day-text: #0B3866;
+      --day-border: #14538F;
+      --today-bg: #DFECF9;
+      --today-border: #0B3866;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --accent-gold: #D4A017;
+      --note-bg: #F1F6FB;
+      --note-border: #DCE6F1;
+    }
+
+    [data-theme="ocean-modern"] {
+      --bg-canvas: #EEF4FA;
+      --bg-card: #FFFFFF;
+      --border-card: #CFE0F0;
+      --civic-dark: #0D4478;
+      --civic-primary: #1765AD;
+      --bg-zebra: #F5FAFF;
+      --row-divider: #DFECF7;
+      --day-bg: #E7F2FC;
+      --day-text: #0D4478;
+      --day-border: #1765AD;
+      --today-bg: #D7EAFB;
+      --today-border: #0D4478;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --accent-gold: #C99712;
+      --note-bg: #EDF5FC;
+      --note-border: #D2E3F4;
+    }
+
+    [data-theme="slate-calm"] {
+      --bg-canvas: #E8EDF2;
+      --bg-card: #FFFFFF;
+      --border-card: #CFD9E3;
+      --civic-dark: #102A43;
+      --civic-primary: #1F4970;
+      --bg-zebra: #F6F8FA;
+      --row-divider: #DFE6EE;
+      --day-bg: #E6EDF4;
+      --day-text: #102A43;
+      --day-border: #1F4970;
+      --today-bg: #D8E3EE;
+      --today-border: #102A43;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --accent-gold: #C29216;
+      --note-bg: #EEF2F6;
+      --note-border: #D6E0EA;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      user-select: none;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .tabular-nums { font-variant-numeric: tabular-nums; }
+    .civic-canvas { background-color: var(--bg-canvas); }
+    .civic-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-card);
+      box-shadow: 0 2px 12px rgba(11, 56, 102, 0.06);
+    }
+    .civic-bg-dark { background-color: var(--civic-dark); }
+    .civic-bg-primary { background-color: var(--civic-primary); }
+    .civic-text-primary { color: var(--civic-primary); }
+    .civic-text-dark { color: var(--civic-dark); }
+    .civic-text-main { color: var(--text-main); }
+    .civic-text-muted { color: var(--text-muted); }
+    .civic-border-gold { border-bottom: 3px solid var(--accent-gold); }
+    .civic-row-even { background-color: var(--bg-card); }
+    .civic-row-odd { background-color: var(--bg-zebra); }
+    .civic-row-border { border-bottom: 1px solid var(--row-divider); }
+
+    .civic-day-bar {
+      background-color: var(--day-bg);
+      color: var(--day-text);
+      border-left: 4px solid var(--day-border);
+      border-top: 1px solid var(--row-divider);
+      border-bottom: 1px solid var(--row-divider);
+    }
+
+    .civic-today-bar {
+      background-color: var(--today-bg);
+      color: var(--civic-dark);
+      border-left: 5px solid var(--today-border);
+      border-top: 1px solid var(--border-card);
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .civic-note-pill {
+      background-color: var(--note-bg);
+      border: 1px solid var(--note-border);
+      color: var(--text-muted);
+    }
+
+    /* Chữ chạy ngang mượt mà ở Footer */
+    .marquee-wrapper {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 4.5rem;
+      will-change: transform;
+      animation: marquee-scroll 38s linear infinite;
+    }
+
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Nhấp nháy tinh tế cho nhãn ĐANG DIỄN RA */
+    @keyframes dot-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.8); }
+    }
+    .animate-live-dot { animation: dot-pulse 1.8s ease-in-out infinite; }
+
+    /* Thanh cuộn tinh gọn trong hộp thoại quản trị */
+    .admin-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+    .admin-scroll::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 999px; }
+    .admin-scroll::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 999px; }
+    .admin-scroll::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+    #scrollTrack { will-change: transform; }
+  </style>
+</head>
+<body class="flex flex-col w-screen h-screen overflow-hidden civic-canvas">
+
+  <!-- Input ẩn để tải ảnh trụ sở lên Header -->
+  <input id="headerImageFileInput" type="file" accept="image/*" class="hidden" onchange="handleHeaderImageUpload(event)" />
+
+  <!-- ===================================================================== -->
+  <!-- 1. HEADER (~16.5vh): ẢNH TRỤ SỞ + PHỦ XANH CÔNG VỤ + CHỈ VÀNG ĐỒNG    -->
+  <!-- ===================================================================== -->
+  <header
+    id="mainHeader"
+    class="group relative w-full h-[16.5vh] min-h-[114px] max-h-[192px] shrink-0 overflow-hidden civic-bg-dark civic-border-gold shadow-md"
+  >
+    <!-- Ảnh toàn cảnh trụ sở (ưu tiên localStorage -> ./header-bg.jpg) -->
+    <img
+      id="headerBgImg"
+      src="./header-bg.jpg"
+      alt="Trụ sở Đảng ủy phường Quảng Yên"
+      class="absolute inset-0 w-full h-full object-cover transition-all duration-300"
+      style="object-position: center 42%;"
+      onload="onHeaderImageLoaded()"
+      onerror="onHeaderImageError()"
+    />
+
+    <!-- Lớp phủ gradient 3 vùng: trái 0.88 -> giữa 0.35 -> phải 0.84 -->
+    <div id="headerGradientOverlay" class="absolute inset-0 transition-all duration-200"></div>
+
+    <!-- Nút tải ảnh gọn gàng (tự ẩn khi đã có ảnh, hiện nhẹ khi rê chuột vào Header) -->
+    <button
+      id="quickUploadHeaderBtn"
+      onclick="triggerHeaderImageUpload()"
+      title="Chọn ảnh toàn cảnh trụ sở Đảng ủy phường từ máy tính"
+      class="absolute top-2.5 left-1/2 -translate-x-1/2 z-30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-white backdrop-blur-md shadow-md flex items-center gap-1.5 transition-all duration-300 cursor-pointer border border-white/30"
+      style="background-color: rgba(11, 56, 102, 0.85);"
+    >
+      <span>📷</span>
+      <span id="quickUploadBtnLabel">Tải ảnh trụ sở lên Header</span>
+    </button>
+
+    <!-- Nội dung chính của Header -->
+    <div class="relative z-10 h-full w-full px-6 lg:px-10 flex items-center justify-between gap-4">
+      <!-- BÊN TRÁI: Thanh nhấn dọc vàng-trắng + Tiêu đề cơ quan & Tuần công tác -->
+      <div class="flex items-stretch gap-4 min-w-0">
+        <div
+          class="w-[4px] rounded-full shrink-0 my-1"
+          style="background: linear-gradient(180deg, #D4A017 0%, #FFFFFF 100%); box-shadow: 0 0 8px rgba(212, 160, 23, 0.45);"
+        ></div>
+
+        <div class="flex flex-col justify-center min-w-0">
+          <h1
+            class="text-xl sm:text-2xl lg:text-3xl xl:text-[34px] font-extrabold text-white uppercase tracking-[0.06em] leading-tight truncate"
+            style="text-shadow: 0 1px 6px rgba(5, 24, 48, 0.75);"
+          >
+            ĐẢNG ỦY PHƯỜNG QUẢNG YÊN
+          </h1>
+
+          <div class="mt-1 flex flex-wrap items-baseline gap-x-2.5 gap-y-0.5">
+            <span
+              class="text-sm sm:text-base lg:text-lg xl:text-[20px] font-bold text-[#F0F6FC] tracking-wide uppercase"
+              style="text-shadow: 0 1px 4px rgba(5, 24, 48, 0.7);"
+            >
+              LỊCH CÔNG TÁC TUẦN
+            </span>
+            <span
+              id="weekStringDisplay"
+              class="text-xs sm:text-sm lg:text-[16px] font-semibold text-[#F5D77F] tracking-wide"
+              style="text-shadow: 0 1px 4px rgba(5, 24, 48, 0.7);"
+            >
+              Đang tải dữ liệu...
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BÊN PHẢI: Đồng hồ điện tử thời gian thực -->
+      <div
+        class="shrink-0 flex flex-col items-end justify-center text-right rounded-xl px-4 lg:px-5 py-2 lg:py-2.5 border border-white/20 backdrop-blur-sm"
+        style="background-color: rgba(11, 56, 102, 0.4);"
+      >
+        <div
+          id="clockTime"
+          class="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-extrabold text-white leading-none tracking-wider tabular-nums"
+          style="text-shadow: 0 1px 6px rgba(5, 24, 48, 0.6);"
+        >
+          00:00:00
+        </div>
+        <div
+          id="clockDate"
+          class="mt-1.5 text-xs sm:text-sm lg:text-[15px] font-semibold text-[#D9E8F6] tracking-wide"
+        >
+          Thứ Hai, 23/11/2026
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- 2. BẢNG LỊCH CÔNG TÁC TUẦN (~79vh)                                    -->
+  <!-- ===================================================================== -->
+  <main class="relative flex-1 flex flex-col w-full overflow-hidden p-2.5 lg:p-3.5 civic-canvas">
+    <div class="flex-1 flex flex-col w-full overflow-hidden rounded-[8px] civic-card">
+      <!-- Hàng tiêu đề 4 cột cố định -->
+      <div class="shrink-0 w-full grid grid-cols-[14%_44%_26%_16%] civic-bg-primary text-white font-bold uppercase tracking-wider text-xs sm:text-sm lg:text-[15px] xl:text-base z-20">
+        <div class="px-4 lg:px-5 py-3 border-r border-white/15 flex items-center">Thời gian</div>
+        <div class="px-4 lg:px-5 py-3 border-r border-white/15 flex items-center">Nội dung công tác</div>
+        <div class="px-4 lg:px-5 py-3 border-r border-white/15 flex items-center">Thành phần</div>
+        <div class="px-4 lg:px-5 py-3 flex items-center">Ghi chú</div>
+      </div>
+
+      <!-- Khung Viewport cuộn mượt tự động -->
+      <div id="scheduleViewport" class="relative flex-1 w-full overflow-hidden bg-white">
+        <div id="scrollTrack" class="w-full">
+          <div class="py-20 text-center civic-text-muted text-base font-medium">
+            Đang kết nối Google Sheets để tải lịch công tác tuần...
+          </div>
+        </div>
+
+        <!-- Nhãn trạng thái nhỏ khi tạm dừng cuộn -->
+        <div
+          id="pauseIndicator"
+          class="pointer-events-none opacity-0 transition-opacity duration-300 absolute bottom-3 right-4 z-30 text-white text-xs font-semibold px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-2"
+          style="background-color: rgba(11, 56, 102, 0.9);"
+        >
+          <span class="w-2 h-2 rounded-full" style="background-color: var(--accent-gold);"></span>
+          <span>Đang tạm dừng cuộn</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- 3. FOOTER (~4.5vh): THÔNG BÁO CHẠY NGANG + TRẠNG THÁI ĐỒNG BỘ         -->
+  <!-- ===================================================================== -->
+  <footer class="shrink-0 w-full h-[4.5vh] min-h-[38px] max-h-[48px] civic-bg-dark text-white px-4 lg:px-6 flex items-center justify-between gap-4 z-30 border-t border-white/10">
+    <!-- BÊN TRÁI: Trạng thái đồng bộ & Chữ chạy ngang -->
+    <div class="flex items-center gap-3 flex-1 min-w-0">
+      <div class="shrink-0 flex items-center gap-2 pr-3 border-r border-white/20">
+        <span id="syncDot" class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+        <span id="syncStatusText" class="text-[11px] lg:text-xs font-semibold text-[#D6E6F5] tracking-wide whitespace-nowrap">
+          Đang đồng bộ...
+        </span>
+      </div>
+
+      <div class="marquee-wrapper flex-1 text-xs sm:text-sm lg:text-[15px] font-medium text-[#EBF3FA]">
+        <div id="marqueeTrack" class="marquee-track">
+          <span>Đảng ủy phường Quảng Yên — Đoàn kết, kỷ cương, trách nhiệm, đổi mới, sáng tạo.</span>
+          <span>Đảng ủy phường Quảng Yên — Đoàn kết, kỷ cương, trách nhiệm, đổi mới, sáng tạo.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BÊN PHẢI: Các nút điều khiển ẩn mờ (rõ khi rê chuột) -->
+    <div class="shrink-0 flex items-center gap-1.5 opacity-30 hover:opacity-100 focus-within:opacity-100 transition-opacity duration-300">
+      <button
+        id="btnSyncNow"
+        onclick="fetchLiveSchedule(true)"
+        title="Đồng bộ dữ liệu ngay từ Google Sheets"
+        class="px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 text-[#E8F1FA] text-xs font-semibold border border-white/15 transition cursor-pointer"
+      >
+        ↻ Đồng bộ ngay
+      </button>
+
+      <button
+        onclick="toggleManualWelcome(true)"
+        title="Bật màn hình Chào mừng"
+        class="px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 text-[#F5D77F] text-xs font-semibold border border-white/15 transition cursor-pointer"
+      >
+        Chào mừng
+      </button>
+
+      <button
+        onclick="openAdminModal('zalo')"
+        title="Quản trị & Nhập nhanh từ Zalo"
+        class="px-2.5 py-1 rounded-md bg-white/15 hover:bg-white/25 text-white text-xs font-bold border border-white/25 transition cursor-pointer"
+      >
+        Quản trị / Zalo
+      </button>
+
+      <button
+        onclick="toggleFullscreen()"
+        title="Bật / Tắt toàn màn hình TV"
+        class="px-2.5 py-1 rounded-md bg-white/10 hover:bg-white/20 text-[#E8F1FA] text-xs font-semibold border border-white/15 transition cursor-pointer"
+      >
+        ⛶ Toàn màn hình
+      </button>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- 4. MÀN HÌNH CHẾ ĐỘ CHÀO MỪNG (XANH CÔNG VỤ + KHUNG KÉP VÀNG ĐỒNG)     -->
+  <!-- ===================================================================== -->
+  <div
+    id="welcomeOverlay"
+    class="hidden fixed inset-0 z-50 flex flex-col items-center justify-center text-center overflow-hidden civic-bg-dark"
+  >
+    <img
+      id="welcomeBgImg"
+      src="./header-bg.jpg"
+      alt="Trụ sở Đảng ủy phường Quảng Yên"
+      class="absolute inset-0 w-full h-full object-cover opacity-20"
+      style="object-position: center 45%;"
+      onerror="this.style.display='none';"
+    />
+    <div
+      class="absolute inset-0"
+      style="background: radial-gradient(circle at center, rgba(18, 78, 138, 0.72) 0%, rgba(11, 56, 102, 0.96) 100%);"
+    ></div>
+
+    <div
+      class="relative z-10 w-[88vw] max-w-5xl mx-auto p-3 rounded-2xl backdrop-blur-sm shadow-2xl"
+      style="border: 2px solid rgba(212, 160, 23, 0.85); background-color: rgba(11, 56, 102, 0.55);"
+    >
+      <div
+        class="rounded-xl px-8 sm:px-14 py-12 sm:py-16 flex flex-col items-center"
+        style="border: 1px solid rgba(212, 160, 23, 0.4);"
+      >
+        <div class="flex items-center gap-4 mb-6 w-full max-w-md">
+          <div class="h-[1px] flex-1" style="background: linear-gradient(to right, transparent, #D4A017);"></div>
+          <div class="w-2 h-2 rotate-45" style="background-color: #D4A017;"></div>
+          <div class="h-[1px] flex-1" style="background: linear-gradient(to left, transparent, #D4A017);"></div>
+        </div>
+
+        <p class="text-[#DCEBF8] font-bold text-lg sm:text-2xl lg:text-[26px] uppercase tracking-[0.2em] mb-4">
+          ĐẢNG ỦY PHƯỜNG QUẢNG YÊN
+        </p>
+
+        <h2
+          id="welcomeHeadlineDisplay"
+          class="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-black uppercase leading-tight tracking-wide"
+          style="color: #F2CA52; text-shadow: 0 3px 14px rgba(5, 24, 48, 0.65);"
+        >
+          NHIỆT LIỆT CHÀO MỪNG
+        </h2>
+
+        <div class="w-44 h-[2px] my-7" style="background: linear-gradient(90deg, transparent, #D4A017, transparent);"></div>
+
+        <p
+          id="welcomeSubtextDisplay"
+          class="text-xl sm:text-2xl lg:text-3xl xl:text-[34px] font-bold text-white leading-relaxed max-w-4xl"
+          style="text-shadow: 0 2px 8px rgba(5, 24, 48, 0.6);"
+        >
+          ĐOÀN CÔNG TÁC VỀ LÀM VIỆC TẠI ĐẢNG ỦY PHƯỜNG QUẢNG YÊN
+        </p>
+
+        <p id="welcomeDateDisplay" class="mt-8 text-base lg:text-lg font-medium text-[#C8DDF0] tracking-wide"></p>
+
+        <div class="flex items-center gap-4 mt-7 w-full max-w-md">
+          <div class="h-[1px] flex-1" style="background: linear-gradient(to right, transparent, rgba(212, 160, 23, 0.7));"></div>
+          <div class="w-2 h-2 rotate-45" style="background-color: rgba(212, 160, 23, 0.8);"></div>
+          <div class="h-[1px] flex-1" style="background: linear-gradient(to left, transparent, rgba(212, 160, 23, 0.7));"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fixed bottom-5 right-5 z-20 flex items-center gap-2 opacity-35 hover:opacity-100 transition-opacity">
+      <button
+        onclick="openAdminModal('welcome')"
+        class="px-4 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-white text-sm font-semibold backdrop-blur border border-white/25 cursor-pointer"
+      >
+        Sửa nội dung chào mừng
+      </button>
+      <button
+        onclick="toggleManualWelcome(false)"
+        class="px-4 py-2 rounded-lg text-sm font-bold shadow-lg cursor-pointer"
+        style="background-color: #D4A017; color: #0B2545;"
+      >
+        ← Quay lại Lịch công tác
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 5. MODAL QUẢN TRỊ / ZALO (3 TABS KẾT NỐI GOOGLE SHEETS API)           -->
+  <!-- ===================================================================== -->
+  <div id="adminModal" class="hidden fixed inset-0 z-50 bg-slate-900/65 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-2xl w-full max-w-5xl max-h-[92vh] flex flex-col overflow-hidden border border-slate-200">
+      <!-- Header Modal -->
+      <div class="civic-bg-dark text-white px-6 py-4 flex items-center justify-between shrink-0 civic-border-gold">
+        <div>
+          <h3 class="text-base sm:text-lg font-extrabold tracking-wide uppercase">
+            Quản trị Lịch Công Tác & Đồng bộ Google Sheets
+          </h3>
+          <p class="text-xs text-[#C7DCF0] mt-0.5">
+            Đẩy dữ liệu qua Cloud API • TV tự động cập nhật sau tối đa 60 giây
+          </p>
+        </div>
+        <button
+          onclick="closeAdminModal()"
+          class="w-9 h-9 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-lg font-bold cursor-pointer transition"
+        >
+          ✕
+        </button>
+      </div>
+
+      <!-- 3 Tabs -->
+      <div class="bg-[#F2F6FA] px-6 pt-3 flex flex-wrap items-center gap-2 border-b border-slate-200 shrink-0">
+        <button id="tabBtn-zalo" onclick="switchAdminTab('zalo')" class="px-4 py-2.5 rounded-t-lg text-sm font-bold transition cursor-pointer">
+          1. Nhập nhanh từ Zalo
+        </button>
+        <button id="tabBtn-welcome" onclick="switchAdminTab('welcome')" class="px-4 py-2.5 rounded-t-lg text-sm font-bold transition cursor-pointer">
+          2. Chào mừng & Thông báo
+        </button>
+        <button id="tabBtn-settings" onclick="switchAdminTab('settings')" class="px-4 py-2.5 rounded-t-lg text-sm font-bold transition cursor-pointer">
+          3. Cài đặt API, Ảnh & Giao diện
+        </button>
+      </div>
+
+      <!-- Nội dung Tabs -->
+      <div class="p-6 overflow-y-auto admin-scroll flex-1 bg-white">
+
+        <!-- TAB 1: NHẬP NHANH TỪ ZALO -> BẢNG XEM TRƯỚC SỬA ĐƯỢC -> ĐẨY LÊN GOOGLE SHEETS -->
+        <div id="tabPanel-zalo" class="space-y-4">
+          <div class="rounded-lg p-3.5 text-xs sm:text-sm border" style="background-color: #F4F8FC; border-color: #D8E3EE;">
+            <p class="font-bold civic-text-dark">Hướng dẫn nhập nhanh từ Zalo:</p>
+            <p class="text-slate-600 mt-0.5">
+              Dán tin nhắn lịch từ nhóm Zalo (dạng <code>Giờ | Nội dung | Thành phần | Ghi chú</code> hoặc văn bản tự nhiên). Bấm <strong>Phân tích tự động</strong>, chỉnh sửa trực tiếp nếu cần rồi bấm <strong>Đẩy lên Google Sheets & TV</strong>.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <label for="zaloInput" class="text-sm font-bold civic-text-main">Nội dung tin nhắn Zalo:</label>
+            <div class="flex items-center gap-2">
+              <button onclick="fillSampleZaloText()" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold cursor-pointer">
+                Dán mẫu thử
+              </button>
+              <button onclick="loadCurrentToPreview()" class="px-3 py-1.5 rounded-lg bg-[#EBF2F9] hover:bg-[#DFECF9] civic-text-dark text-xs font-bold cursor-pointer">
+                Sửa lịch đang chiếu
+              </button>
+              <button onclick="parseZaloText()" class="px-4 py-1.5 rounded-lg civic-bg-primary hover:opacity-95 text-white text-xs font-bold shadow cursor-pointer">
+                ⚡ Phân tích tự động
+              </button>
+            </div>
+          </div>
+
+          <textarea
+            id="zaloInput"
+            rows="6"
+            placeholder="Ví dụ:
+THỨ HAI - 23/11/2026
+08:00 - 11:00 | Họp Ban Thường vụ Đảng ủy định kỳ | BTV Đảng ủy | Phòng họp tầng 2
+14:00 - 16:30 | Hội nghị Chuyển đổi số trong công tác Đảng | BCH Đảng bộ, Bí thư chi bộ | Hội trường tầng 2"
+            class="w-full rounded-lg border border-slate-300 focus:border-[#14538F] p-3 text-sm font-mono text-slate-800 outline-none"
+          ></textarea>
+
+          <!-- Bảng xem trước có thể chỉnh sửa từng ô -->
+          <div id="zaloPreviewBox" class="hidden space-y-3 border-t border-slate-200 pt-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2">
+                <h4 class="text-sm font-bold text-emerald-700">
+                  Bảng xem trước (<span id="zaloParsedCount">0</span> dòng) — Có thể sửa trực tiếp từng ô:
+                </h4>
+                <button onclick="addEmptyPreviewRow()" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700 cursor-pointer">
+                  + Thêm dòng
+                </button>
+              </div>
+              <button
+                id="btnPushSchedule"
+                onclick="pushScheduleToCloud()"
+                class="px-5 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 text-white text-xs sm:text-sm font-bold shadow cursor-pointer transition flex items-center gap-2"
+              >
+                <span>☁ Đẩy lên Google Sheets & TV</span>
+              </button>
+            </div>
+
+            <div class="overflow-x-auto border border-slate-200 rounded-lg max-h-64 overflow-y-auto admin-scroll">
+              <table class="w-full text-xs text-left border-collapse">
+                <thead class="bg-[#EBF2F9] civic-text-dark font-bold sticky top-0 z-10">
+                  <tr>
+                    <th class="p-2 border-b border-slate-200 w-[18%]">Thứ / Ngày</th>
+                    <th class="p-2 border-b border-slate-200 w-[14%]">Thời gian</th>
+                    <th class="p-2 border-b border-slate-200 w-[34%]">Nội dung công tác</th>
+                    <th class="p-2 border-b border-slate-200 w-[18%]">Thành phần</th>
+                    <th class="p-2 border-b border-slate-200 w-[12%]">Ghi chú</th>
+                    <th class="p-2 border-b border-slate-200 w-[4%] text-center">Xóa</th>
+                  </tr>
+                </thead>
+                <tbody id="zaloEditableBody" class="divide-y divide-slate-100 bg-white"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: CHÀO MỪNG & THÔNG BÁO (LƯU THẲNG LÊN GOOGLE SHEETS) -->
+        <div id="tabPanel-welcome" class="hidden space-y-5">
+          <div class="rounded-lg p-4 border space-y-4" style="background-color: #F7FAFD; border-color: #D8E3EE;">
+            <h4 class="text-sm font-extrabold civic-text-dark">Thông tin Tuần công tác & Thanh chạy ngang</h4>
+            <div class="space-y-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">Chuỗi tuần hiển thị trên Header (Cột Tuan)</label>
+                <input id="inpCloudTuan" type="text" placeholder="VD: TUẦN 48 (TỪ 23/11 ĐẾN 29/11/2026)" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#14538F] bg-white" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">Dòng thông báo chạy ngang ở Footer (Cột ThongBaoChay)</label>
+                <textarea id="inpCloudMarquee" rows="2" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#14538F] bg-white"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-lg p-4 border border-amber-200 bg-amber-50/40 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <h4 class="text-sm font-extrabold civic-text-dark">Chế độ Màn hình Chào mừng (Cột CheDoChaoMung)</h4>
+                <p class="text-xs text-slate-600 mt-0.5">Khi bật và lưu lên Google Sheets, TV ngoài sảnh sẽ tự động chuyển sang màn hình Chào mừng.</p>
+              </div>
+              <label class="inline-flex items-center gap-2.5 px-3.5 py-2 rounded-lg bg-white border border-amber-300 cursor-pointer shadow-sm">
+                <input id="inpCloudWelcomeMode" type="checkbox" class="w-4 h-4 accent-[#0B3866] cursor-pointer" />
+                <span class="text-xs font-extrabold civic-text-dark uppercase">Bật Chào mừng trên TV</span>
+              </label>
+            </div>
+
+            <div class="grid grid-cols-1 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">Tiêu đề lớn (TieuDeChaoMung)</label>
+                <input id="inpCloudWelcomeTitle" type="text" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm font-bold outline-none focus:border-[#14538F] bg-white" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">Nội dung chào mừng chi tiết (NoiDungChaoMung)</label>
+                <textarea id="inpCloudWelcomeSub" rows="2" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-[#14538F] bg-white"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <button
+              id="btnPushConfig"
+              onclick="pushConfigToCloud()"
+              class="px-6 py-2.5 rounded-lg civic-bg-primary hover:opacity-95 disabled:opacity-60 text-white text-sm font-bold shadow cursor-pointer transition"
+            >
+              ☁ Lưu lên Google Sheets
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 3: CÀI ĐẶT API, ẢNH HEADER & GIAO DIỆN -->
+        <div id="tabPanel-settings" class="hidden space-y-6">
+          <!-- 1. Kết nối API -->
+          <div class="rounded-lg p-4 border border-slate-200 bg-slate-50 space-y-3">
+            <h4 class="text-sm font-extrabold civic-text-dark">1. Kết nối Google Apps Script API</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div class="md:col-span-2">
+                <label class="block text-xs font-bold text-slate-600 mb-1">API URL (/exec)</label>
+                <input id="cfgApiUrl" type="text" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs font-mono bg-white outline-none focus:border-[#14538F]" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-600 mb-1">SECRET_TOKEN</label>
+                <input id="cfgSecretToken" type="password" class="w-full rounded-lg border border-slate-300 px-3 py-2 text-xs font-mono bg-white outline-none focus:border-[#14538F]" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Chọn 1 trong 3 bảng màu công vụ -->
+          <div class="space-y-2.5">
+            <h4 class="text-sm font-extrabold civic-text-dark">2. Bảng màu chuẩn Công vụ (60–30–10)</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <button type="button" id="themeCard-civic-standard" onclick="selectThemePreset('civic-standard')" class="text-left p-3 rounded-xl border-2 transition cursor-pointer bg-white">
+                <div class="flex items-center gap-1.5 mb-2">
+                  <span class="w-5 h-5 rounded" style="background:#0B3866;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#14538F;"></span>
+                  <span class="w-5 h-5 rounded border border-slate-200" style="background:#EDF2F7;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#D4A017;"></span>
+                </div>
+                <div class="text-xs font-bold text-[#0B3866]">Xanh Công vụ Chuẩn TTĐT</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Mặc định • Trang trọng, cân bằng</div>
+              </button>
+
+              <button type="button" id="themeCard-ocean-modern" onclick="selectThemePreset('ocean-modern')" class="text-left p-3 rounded-xl border-2 transition cursor-pointer bg-white">
+                <div class="flex items-center gap-1.5 mb-2">
+                  <span class="w-5 h-5 rounded" style="background:#0D4478;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#1765AD;"></span>
+                  <span class="w-5 h-5 rounded border border-slate-200" style="background:#EEF4FA;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#C99712;"></span>
+                </div>
+                <div class="text-xs font-bold text-[#0D4478]">Xanh Biển Sáng Hiện đại</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Tươi sáng • Sảnh ít ánh sáng</div>
+              </button>
+
+              <button type="button" id="themeCard-slate-calm" onclick="selectThemePreset('slate-calm')" class="text-left p-3 rounded-xl border-2 transition cursor-pointer bg-white">
+                <div class="flex items-center gap-1.5 mb-2">
+                  <span class="w-5 h-5 rounded" style="background:#102A43;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#1F4970;"></span>
+                  <span class="w-5 h-5 rounded border border-slate-200" style="background:#E8EDF2;"></span>
+                  <span class="w-5 h-5 rounded" style="background:#C29216;"></span>
+                </div>
+                <div class="text-xs font-bold text-[#102A43]">Xanh Trầm Dịu mắt</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Chống chói tối đa 24/7</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Ảnh trụ sở Header & 2 thanh trượt + Tốc độ cuộn -->
+          <div class="rounded-xl p-4 border space-y-4" style="background-color: #F7FAFD; border-color: #D8E3EE;">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <h4 class="text-sm font-extrabold civic-text-dark">3. Ảnh trụ sở Header & Tốc độ cuộn</h4>
+                <p class="text-xs text-slate-500">Mặc định tự nạp <code>./header-bg.jpg</code> cùng thư mục hoặc ảnh tải lên bên dưới.</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <button onclick="triggerHeaderImageUpload()" class="px-3.5 py-1.5 rounded-lg civic-bg-primary text-white text-xs font-bold cursor-pointer">
+                  📷 Tải ảnh lên
+                </button>
+                <button onclick="clearCustomHeaderImage()" class="px-3 py-1.5 rounded-lg bg-white text-rose-700 border border-rose-200 text-xs font-bold cursor-pointer">
+                  Gỡ ảnh tải lên
+                </button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div class="bg-white rounded-lg p-3 border border-slate-200">
+                <div class="flex justify-between text-xs font-bold mb-1">
+                  <span>Vị trí dọc ảnh nền</span>
+                  <span id="bgPosYValue" class="civic-text-primary tabular-nums">42%</span>
+                </div>
+                <input id="cfgBgPosY" type="range" min="0" max="100" value="42" oninput="onSliderLivePreview()" class="w-full accent-[#14538F] cursor-pointer" />
+              </div>
+
+              <div class="bg-white rounded-lg p-3 border border-slate-200">
+                <div class="flex justify-between text-xs font-bold mb-1">
+                  <span>Độ đậm lớp phủ xanh</span>
+                  <span id="overlayDarknessValue" class="civic-text-primary tabular-nums">88%</span>
+                </div>
+                <input id="cfgOverlayDarkness" type="range" min="40" max="100" value="88" oninput="onSliderLivePreview()" class="w-full accent-[#14538F] cursor-pointer" />
+              </div>
+
+              <div class="bg-white rounded-lg p-3 border border-slate-200">
+                <label for="cfgScrollSpeed" class="block text-xs font-bold mb-1">Tốc độ tự động cuộn</label>
+                <select id="cfgScrollSpeed" class="w-full rounded border border-slate-300 px-2.5 py-1 text-xs font-semibold bg-white outline-none">
+                  <option value="20">Chậm (20 px/giây)</option>
+                  <option value="30">Vừa (30 px/giây - Chuẩn TV)</option>
+                  <option value="44">Nhanh (44 px/giây)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-end">
+            <button onclick="saveLocalSettings()" class="px-6 py-2.5 rounded-lg civic-bg-primary hover:opacity-95 text-white text-sm font-bold shadow cursor-pointer">
+              Lưu cài đặt hiển thị
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 6. TOAST THÔNG BÁO (THAY THẾ ALERT)                                   -->
+  <!-- ===================================================================== -->
+  <div id="toastBox" class="pointer-events-none fixed top-5 left-1/2 -translate-x-1/2 z-[60] opacity-0 transition-all duration-300 -translate-y-3">
+    <div id="toastInner" class="px-5 py-2.5 rounded-lg text-white text-sm font-semibold shadow-xl flex items-center gap-2" style="background-color: var(--civic-dark); border: 1px solid var(--accent-gold);">
+      <span id="toastMessage">Thông báo</span>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- JAVASCRIPT: LIVE API, OFFLINE CACHE, AUTO-SCROLL & ADMIN PUSH         -->
+  <!-- ===================================================================== -->
+  <script>
+    const DEFAULT_API_URL = 'https://script.google.com/macros/s/AKfycbyI0AoFXaXZ5fIs1UgK7ktbqxPe3-PK4TXJ4t4UUtWWHiu-rDtlnqjbzo2aO8gj2Sq6/exec';
+    const DEFAULT_SECRET_TOKEN = 'QUANGYEN_TV_2026_SECRET';
+    const DEFAULT_HEADER_IMG = './header-bg.jpg';
+
+    const LS_KEYS = {
+      SETTINGS: 'qy_tv_local_settings_v4',
+      CACHE: 'qy_tv_api_cache_v4',
+      HEADER_IMG: 'qy_tv_header_img_v4',
+    };
+
+    const THEME_DARK_RGB = {
+      'civic-standard': '11, 56, 102',
+      'ocean-modern': '13, 68, 120',
+      'slate-calm': '16, 42, 67',
+    };
+
+    // Cài đặt cục bộ trên trình duyệt TV
+    let localSettings = loadLocalSettings();
+
+    // Dữ liệu đồng bộ từ Google Sheets
+    let liveData = loadCachedApiData() || {
+      config: {
+        Tuan: 'TUẦN 48 (TỪ 23/11 ĐẾN 29/11/2026)',
+        ThongBaoChay: 'Đảng ủy phường Quảng Yên quyết tâm hoàn thành thắng lợi các nhiệm vụ chính trị năm 2026.',
+        CheDoChaoMung: 'FALSE',
+        TieuDeChaoMung: 'NHIỆT LIỆT CHÀO MỪNG',
+        NoiDungChaoMung: 'ĐOÀN CÔNG TÁC VỀ LÀM VIỆC TẠI ĐẢNG ỦY PHƯỜNG QUẢNG YÊN',
+        CapNhatLuc: '',
+      },
+      schedule: [],
+    };
+
+    // Trạng thái cuộn tự động (dừng 4s ở đầu/cuối, lặp mượt)
+    let isHoverPaused = false;
+    let scrollOffset = 0;
+    let maxScrollable = 0;
+    let shouldScroll = false;
+    let scrollState = 'PAUSE_TOP'; // PAUSE_TOP -> SCROLLING -> PAUSE_BOTTOM
+    let pauseTimerMs = 0;
+    const PAUSE_DURATION_MS = 4000;
+    let lastFrameTime = null;
+
+    let manualWelcomeOverride = null; // null = theo Google Sheets, true/false = bấm tay
+    let previewRows = [];
+    let toastTimer = null;
+
+    // =========================================================================
+    // 1. QUẢN LÝ LOCALSTORAGE
+    // =========================================================================
+    function loadLocalSettings() {
+      const defaults = {
+        apiUrl: DEFAULT_API_URL,
+        secretToken: DEFAULT_SECRET_TOKEN,
+        theme: 'civic-standard',
+        bgPosY: 42,
+        overlayDarkness: 88,
+        scrollSpeed: 30,
+      };
+      try {
+        const raw = localStorage.getItem(LS_KEYS.SETTINGS);
+        if (raw) return { ...defaults, ...JSON.parse(raw) };
+      } catch (e) {}
+      return defaults;
+    }
+
+    function saveLocalSettingsToStorage() {
+      try {
+        localStorage.setItem(LS_KEYS.SETTINGS, JSON.stringify(localSettings));
+      } catch (e) {}
+    }
+
+    function loadCachedApiData() {
+      try {
+        const raw = localStorage.getItem(LS_KEYS.CACHE);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {}
+      return null;
+    }
+
+    function saveCachedApiData(data) {
+      try {
+        localStorage.setItem(LS_KEYS.CACHE, JSON.stringify(data));
+      } catch (e) {}
+    }
+
+    // =========================================================================
+    // 2. KẾT NỐI LIVE API (GET MỖI 60S & POST ĐẨY DỮ LIỆU)
+    // =========================================================================
+    async function fetchLiveSchedule(isManual = false) {
+      const dot = document.getElementById('syncDot');
+      const statusText = document.getElementById('syncStatusText');
+      const btnSync = document.getElementById('btnSyncNow');
+
+      if (isManual && btnSync) btnSync.textContent = '↻ Đang tải...';
+
+      try {
+        const url = localSettings.apiUrl || DEFAULT_API_URL;
+        const response = await fetch(url, { method: 'GET', cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const json = await response.json();
+        if (json.status !== 'success') throw new Error(json.message || 'API trả về lỗi');
+
+        const prevSerialized = JSON.stringify(liveData);
+        liveData = {
+          config: json.config || liveData.config,
+          schedule: Array.isArray(json.schedule) ? json.schedule : [],
+        };
+        saveCachedApiData(liveData);
+
+        const now = new Date();
+        const hhmm = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400';
+        const sheetTime = liveData.config.CapNhatLuc ? ` • Sheet: ${liveData.config.CapNhatLuc}` : '';
+        statusText.textContent = `Đã đồng bộ: ${hhmm}${sheetTime}`;
+
+        // Chỉ render lại bảng khi dữ liệu thay đổi để không làm giật nhịp cuộn
+        if (prevSerialized !== JSON.stringify(liveData) || isManual) {
+          renderAllFromLiveData();
+        }
+        if (isManual) showToast('Đã đồng bộ dữ liệu mới nhất từ Google Sheets!');
+      } catch (err) {
+        console.warn('Lỗi đồng bộ API, dùng dữ liệu lưu tạm:', err);
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-amber-400';
+        statusText.textContent = 'Ngoại tuyến - Dùng dữ liệu lưu tạm';
+        if (isManual) showToast('Không thể kết nối máy chủ, đang hiển thị dữ liệu lưu tạm.');
+      } finally {
+        if (isManual && btnSync) btnSync.textContent = '↻ Đồng bộ ngay';
+      }
+    }
+
+    async function postToCloudApi(payload) {
+      const url = localSettings.apiUrl || DEFAULT_API_URL;
+      const body = JSON.stringify({
+        token: localSettings.secretToken || DEFAULT_SECRET_TOKEN,
+        ...payload,
+      });
+
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body,
+      });
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const json = await response.json();
+      if (json.status !== 'success') {
+        throw new Error(json.message || 'Không thể ghi dữ liệu lên Google Sheets');
+      }
+      return json;
+    }
+
+    // =========================================================================
+    // 3. RENDER DỮ LIỆU & NHẬN DIỆN NGÀY HÔM NAY + GIỜ ĐANG DIỄN RA
+    // =========================================================================
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function getTodayDDMMYYYY() {
+      const now = new Date();
+      const dd = String(now.getDate()).padStart(2, '0');
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const yyyy = now.getFullYear();
+      return `${dd}/${mm}/${yyyy}`;
+    }
+
+    function isDayStringToday(dayStr) {
+      const todayFull = getTodayDDMMYYYY();
+      const todayShort = todayFull.slice(0, 5); // dd/mm
+      return String(dayStr || '').includes(todayFull) || String(dayStr || '').includes(todayShort);
+    }
+
+    function getSlotStatus(dayStr, timeStr) {
+      if (!isDayStringToday(dayStr)) return 'upcoming';
+      const match = String(timeStr || '').match(/(\d{1,2})[:h](\d{2})\s*[-–]\s*(\d{1,2})[:h](\d{2})/i);
+      if (!match) return 'upcoming';
+
+      const now = new Date();
+      const nowMins = now.getHours() * 60 + now.getMinutes();
+      const startMins = parseInt(match[1], 10) * 60 + parseInt(match[2], 10);
+      const endMins = parseInt(match[3], 10) * 60 + parseInt(match[4], 10);
+
+      if (nowMins >= startMins && nowMins <= endMins) return 'live';
+      if (nowMins > endMins) return 'done';
+      return 'upcoming';
+    }
+
+    function renderAllFromLiveData() {
+      const cfg = liveData.config || {};
+
+      // Header tuần
+      document.getElementById('weekStringDisplay').textContent = cfg.Tuan || '';
+
+      // Footer marquee
+      const marqueeText = escapeHtml(
+        cfg.ThongBaoChay || 'Đảng ủy phường Quảng Yên — Đoàn kết, kỷ cương, trách nhiệm, đổi mới, sáng tạo.'
+      );
+      document.getElementById('marqueeTrack').innerHTML = `<span>${marqueeText}</span><span>${marqueeText}</span>`;
+
+      // Welcome screen content & visibility
+      document.getElementById('welcomeHeadlineDisplay').textContent = cfg.TieuDeChaoMung || 'NHIỆT LIỆT CHÀO MỪNG';
+      document.getElementById('welcomeSubtextDisplay').textContent =
+        cfg.NoiDungChaoMung || 'ĐOÀN CÔNG TÁC VỀ LÀM VIỆC TẠI ĐẢNG ỦY PHƯỜNG QUẢNG YÊN';
+
+      const sheetWelcomeOn = String(cfg.CheDoChaoMung || '').toUpperCase() === 'TRUE';
+      const showWelcome = manualWelcomeOverride !== null ? manualWelcomeOverride : sheetWelcomeOn;
+      document.getElementById('welcomeOverlay').classList.toggle('hidden', !showWelcome);
+
+      // Render bảng lịch
+      renderScheduleTable();
+    }
+
+    function renderScheduleTable() {
+      const viewport = document.getElementById('scheduleViewport');
+      const track = document.getElementById('scrollTrack');
+      const items = liveData.schedule || [];
+
+      if (!items.length) {
+        track.innerHTML = `
+          <div class="py-20 text-center civic-text-muted text-lg font-medium">
+            Chưa có lịch công tác trong tuần trên Google Sheets.
+          </div>
+        `;
+        shouldScroll = false;
+        track.style.transform = 'translate3d(0, 0px, 0)';
+        return;
+      }
+
+      // Nhóm theo ngày (day)
+      const groups = [];
+      const groupMap = new Map();
+      items.forEach((item) => {
+        const key = (item.day || 'LỊCH CÔNG TÁC').trim();
+        if (!groupMap.has(key)) {
+          const g = { day: key, isToday: isDayStringToday(key), items: [] };
+          groupMap.set(key, g);
+          groups.push(g);
+        }
+        groupMap.get(key).items.push(item);
+      });
+
+      let html = '';
+      let rowIdx = 0;
+
+      groups.forEach((group) => {
+        const barClass = group.isToday ? 'civic-today-bar' : 'civic-day-bar';
+        html += `
+          <div class="w-full px-4 lg:px-5 py-2.5 flex items-center justify-between ${barClass}">
+            <div class="flex items-center gap-3">
+              <span class="text-sm sm:text-base lg:text-[17px] xl:text-[18px] font-extrabold uppercase tracking-wide">
+                ${escapeHtml(group.day)}
+              </span>
+              ${
+                group.isToday
+                  ? '<span class="px-2.5 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider text-white civic-bg-dark">Hôm nay</span>'
+                  : ''
+              }
+            </div>
+            <span class="text-xs lg:text-sm font-semibold civic-text-muted">${group.items.length} nội dung</span>
+          </div>
+        `;
+
+        group.items.forEach((item) => {
+          const rowBg = rowIdx % 2 === 1 ? 'civic-row-odd' : 'civic-row-even';
+          rowIdx++;
+
+          const status = getSlotStatus(group.day, item.time);
+          const opacityClass = status === 'done' ? 'opacity-60' : '';
+          const statusBadge =
+            status === 'live'
+              ? `<div class="mt-1.5 inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wide w-fit"
+                      style="color:#B91C1C; background-color:#FEF2F2; border:1px solid #FECACA;">
+                   <span class="w-1.5 h-1.5 rounded-full animate-live-dot" style="background-color:#B91C1C;"></span>
+                   Đang diễn ra
+                 </div>`
+              : '';
+
+          html += `
+            <div class="w-full grid grid-cols-[14%_44%_26%_16%] civic-row-border ${rowBg} ${opacityClass}">
+              <div class="px-4 lg:px-5 py-3.5 lg:py-4 border-r border-[#E6EEF6] flex flex-col justify-center">
+                <span class="text-sm sm:text-base lg:text-[17px] xl:text-[19px] font-bold civic-text-primary tabular-nums leading-snug">
+                  ${escapeHtml(item.time)}
+                </span>
+                ${statusBadge}
+              </div>
+              <div class="px-4 lg:px-5 py-3.5 lg:py-4 border-r border-[#E6EEF6] flex items-center">
+                <p class="text-sm sm:text-base lg:text-[17px] xl:text-[19px] font-medium civic-text-main leading-relaxed">
+                  ${escapeHtml(item.content)}
+                </p>
+              </div>
+              <div class="px-4 lg:px-5 py-3.5 lg:py-4 border-r border-[#E6EEF6] flex items-center">
+                <p class="text-xs sm:text-sm lg:text-[15px] xl:text-[17px] font-normal civic-text-muted leading-relaxed">
+                  ${escapeHtml(item.participants)}
+                </p>
+              </div>
+              <div class="px-4 lg:px-5 py-3.5 lg:py-4 flex items-center">
+                <span class="inline-block px-2.5 py-1 rounded-md civic-note-pill text-xs sm:text-sm lg:text-[14px] xl:text-[15px] font-semibold leading-snug">
+                  ${escapeHtml(item.note || '—')}
+                </span>
+              </div>
+            </div>
+          `;
+        });
+      });
+
+      track.innerHTML = html;
+      track.style.transform = 'translate3d(0, 0px, 0)';
+
+      requestAnimationFrame(() => {
+        const contentHeight = track.scrollHeight;
+        const viewportHeight = viewport.clientHeight;
+        maxScrollable = Math.max(0, contentHeight - viewportHeight);
+        shouldScroll = maxScrollable > 10;
+        scrollOffset = 0;
+        scrollState = 'PAUSE_TOP';
+        pauseTimerMs = 0;
+      });
+    }
+
+    // =========================================================================
+    // 4. VÒNG LẶP AUTO-SCROLL (DỪNG 4 GIÂY ĐẦU & CUỐI, LẶP MƯỢT)
+    // =========================================================================
+    function animationLoop(timestamp) {
+      if (lastFrameTime === null) lastFrameTime = timestamp;
+      const dtMs = Math.min(timestamp - lastFrameTime, 100);
+      lastFrameTime = timestamp;
+
+      if (shouldScroll && !isHoverPaused && maxScrollable > 0) {
+        const track = document.getElementById('scrollTrack');
+
+        if (scrollState === 'PAUSE_TOP') {
+          pauseTimerMs += dtMs;
+          if (pauseTimerMs >= PAUSE_DURATION_MS) {
+            pauseTimerMs = 0;
+            scrollState = 'SCROLLING';
+          }
+        } else if (scrollState === 'SCROLLING') {
+          const speed = Number(localSettings.scrollSpeed) || 30;
+          scrollOffset += (speed * dtMs) / 1000;
+          if (scrollOffset >= maxScrollable) {
+            scrollOffset = maxScrollable;
+            scrollState = 'PAUSE_BOTTOM';
+            pauseTimerMs = 0;
+          }
+          if (track) track.style.transform = `translate3d(0, -${scrollOffset.toFixed(2)}px, 0)`;
+        } else if (scrollState === 'PAUSE_BOTTOM') {
+          pauseTimerMs += dtMs;
+          if (pauseTimerMs >= PAUSE_DURATION_MS) {
+            scrollOffset = 0;
+            pauseTimerMs = 0;
+            scrollState = 'PAUSE_TOP';
+            if (track) track.style.transform = 'translate3d(0, 0px, 0)';
+          }
+        }
+      }
+
+      requestAnimationFrame(animationLoop);
+    }
+
+    // =========================================================================
+    // 5. HEADER IMAGE, 3 BẢNG MÀU & ĐỒNG HỒ + TỰ RELOAD LÚC 03:00 SÁNG
+    // =========================================================================
+    function applyTheme(themeKey) {
+      const valid = THEME_DARK_RGB[themeKey] ? themeKey : 'civic-standard';
+      document.documentElement.setAttribute('data-theme', valid);
+      ['civic-standard', 'ocean-modern', 'slate-calm'].forEach((k) => {
+        const card = document.getElementById(`themeCard-${k}`);
+        if (!card) return;
+        card.style.borderColor = k === valid ? 'var(--civic-primary)' : '#E2E8F0';
+        card.style.backgroundColor = k === valid ? 'var(--day-bg)' : '#FFFFFF';
+      });
+      applyHeaderVisuals(localSettings.bgPosY, localSettings.overlayDarkness, valid);
+    }
+
+    function selectThemePreset(themeKey) {
+      localSettings.theme = themeKey;
+      applyTheme(themeKey);
+      saveLocalSettingsToStorage();
+    }
+
+    function applyHeaderVisuals(posY, darkness, themeKey) {
+      const rgb = THEME_DARK_RGB[themeKey || localSettings.theme] || '11, 56, 102';
+      const scale = Math.min(1.0, Math.max(0.4, darkness / 88));
+      const grad = `linear-gradient(90deg, rgba(${rgb}, ${(0.88 * scale).toFixed(2)}) 0%, rgba(${rgb}, ${(0.62 * scale).toFixed(2)}) 28%, rgba(${rgb}, ${(0.35 * scale).toFixed(2)}) 52%, rgba(${rgb}, ${(0.58 * scale).toFixed(2)}) 75%, rgba(${rgb}, ${(0.84 * scale).toFixed(2)}) 100%)`;
+
+      const headerImg = document.getElementById('headerBgImg');
+      const headerOverlay = document.getElementById('headerGradientOverlay');
+      if (headerImg) headerImg.style.objectPosition = `center ${posY}%`;
+      if (headerOverlay) headerOverlay.style.background = grad;
+    }
+
+    function loadHeaderImageSource() {
+      let saved = null;
+      try { saved = localStorage.getItem(LS_KEYS.HEADER_IMG); } catch (e) {}
+      setHeaderImages(saved || DEFAULT_HEADER_IMG);
+    }
+
+    function setHeaderImages(src) {
+      ['headerBgImg', 'welcomeBgImg'].forEach((id) => {
+        const img = document.getElementById(id);
+        if (img) {
+          img.style.display = 'block';
+          img.src = src;
+        }
+      });
+    }
+
+    function onHeaderImageLoaded() {
+      const btn = document.getElementById('quickUploadHeaderBtn');
+      const lbl = document.getElementById('quickUploadBtnLabel');
+      if (btn) {
+        btn.classList.remove('opacity-100');
+        btn.classList.add('opacity-0', 'group-hover:opacity-100');
+      }
+      if (lbl) lbl.textContent = 'Đổi ảnh trụ sở Header';
+    }
+
+    function onHeaderImageError() {
+      const img = document.getElementById('headerBgImg');
+      if (img) img.style.display = 'none';
+      const btn = document.getElementById('quickUploadHeaderBtn');
+      const lbl = document.getElementById('quickUploadBtnLabel');
+      if (btn) {
+        btn.classList.remove('opacity-0', 'group-hover:opacity-100');
+        btn.classList.add('opacity-100');
+      }
+      if (lbl) lbl.textContent = 'Tải ảnh trụ sở lên Header';
+    }
+
+    function triggerHeaderImageUpload() {
+      const inp = document.getElementById('headerImageFileInput');
+      if (inp) { inp.value = ''; inp.click(); }
+    }
+
+    function handleHeaderImageUpload(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const maxW = 1920;
+          let w = img.width, h = img.height;
+          if (w > maxW) { h = Math.round((h * maxW) / w); w = maxW; }
+          const canvas = document.createElement('canvas');
+          canvas.width = w; canvas.height = h;
+          canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+          let b64 = canvas.toDataURL('image/jpeg', 0.82);
+          try {
+            localStorage.setItem(LS_KEYS.HEADER_IMG, b64);
+          } catch (err) {
+            b64 = canvas.toDataURL('image/jpeg', 0.6);
+            localStorage.setItem(LS_KEYS.HEADER_IMG, b64);
+          }
+          setHeaderImages(b64);
+          showToast('Đã tải & lưu ảnh trụ sở lên Header!');
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function clearCustomHeaderImage() {
+      try { localStorage.removeItem(LS_KEYS.HEADER_IMG); } catch (e) {}
+      setHeaderImages(DEFAULT_HEADER_IMG);
+      showToast('Đã gỡ ảnh tải lên');
+    }
+
+    function onSliderLivePreview() {
+      const y = parseInt(document.getElementById('cfgBgPosY').value, 10);
+      const d = parseInt(document.getElementById('cfgOverlayDarkness').value, 10);
+      document.getElementById('bgPosYValue').textContent = `${y}%`;
+      document.getElementById('overlayDarknessValue').textContent = `${d}%`;
+      applyHeaderVisuals(y, d, localSettings.theme);
+    }
+
+    function updateClockAndMaintenance() {
+      const now = new Date();
+      const days = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+      const hh = String(now.getHours()).padStart(2, '0');
+      const mm = String(now.getMinutes()).padStart(2, '0');
+      const ss = String(now.getSeconds()).padStart(2, '0');
+      const dd = String(now.getDate()).padStart(2, '0');
+      const mo = String(now.getMonth() + 1).padStart(2, '0');
+      const yyyy = now.getFullYear();
+
+      document.getElementById('clockTime').textContent = `${hh}:${mm}:${ss}`;
+      document.getElementById('clockDate').textContent = `${days[now.getDay()]}, ${dd}/${mo}/${yyyy}`;
+      document.getElementById('welcomeDateDisplay').textContent = `${days[now.getDay()]}, ngày ${dd} tháng ${mo} năm ${yyyy}`;
+
+      // Tự động reload toàn trang lúc 03:00:00 sáng để giải phóng RAM cho TV
+      if (now.getHours() === 3 && now.getMinutes() === 0 && now.getSeconds() === 0) {
+        window.location.reload();
+      }
+    }
+
+    // =========================================================================
+    // 6. MODAL QUẢN TRỊ (3 TABS) & ĐẨY DỮ LIỆU LÊN GOOGLE SHEETS
+    // =========================================================================
+    function toggleManualWelcome(show) {
+      manualWelcomeOverride = show;
+      document.getElementById('welcomeOverlay').classList.toggle('hidden', !show);
+      if (show) closeAdminModal();
+    }
+
+    function toggleFullscreen() {
+      try {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(() => showToast('Bấm F11 để bật toàn màn hình'));
+        } else {
+          document.exitFullscreen().catch(() => {});
+        }
+      } catch (e) {
+        showToast('Bấm F11 để bật toàn màn hình');
+      }
+    }
+
+    function openAdminModal(tab = 'zalo') {
+      document.getElementById('adminModal').classList.remove('hidden');
+      switchAdminTab(tab);
+
+      // Điền sẵn Tab 2 từ dữ liệu live
+      const cfg = liveData.config || {};
+      document.getElementById('inpCloudTuan').value = cfg.Tuan || '';
+      document.getElementById('inpCloudMarquee').value = cfg.ThongBaoChay || '';
+      document.getElementById('inpCloudWelcomeMode').checked = String(cfg.CheDoChaoMung || '').toUpperCase() === 'TRUE';
+      document.getElementById('inpCloudWelcomeTitle').value = cfg.TieuDeChaoMung || 'NHIỆT LIỆT CHÀO MỪNG';
+      document.getElementById('inpCloudWelcomeSub').value = cfg.NoiDungChaoMung || '';
+
+      // Điền sẵn Tab 3 từ cài đặt cục bộ
+      document.getElementById('cfgApiUrl').value = localSettings.apiUrl;
+      document.getElementById('cfgSecretToken').value = localSettings.secretToken;
+      document.getElementById('cfgBgPosY').value = localSettings.bgPosY;
+      document.getElementById('bgPosYValue').textContent = `${localSettings.bgPosY}%`;
+      document.getElementById('cfgOverlayDarkness').value = localSettings.overlayDarkness;
+      document.getElementById('overlayDarknessValue').textContent = `${localSettings.overlayDarkness}%`;
+      document.getElementById('cfgScrollSpeed').value = String(localSettings.scrollSpeed || 30);
+      applyTheme(localSettings.theme);
+    }
+
+    function closeAdminModal() {
+      applyHeaderVisuals(localSettings.bgPosY, localSettings.overlayDarkness, localSettings.theme);
+      document.getElementById('adminModal').classList.add('hidden');
+    }
+
+    function switchAdminTab(tabName) {
+      ['zalo', 'welcome', 'settings'].forEach((t) => {
+        const btn = document.getElementById(`tabBtn-${t}`);
+        const panel = document.getElementById(`tabPanel-${t}`);
+        if (t === tabName) {
+          btn.className = 'px-4 py-2.5 rounded-t-lg text-sm font-bold bg-white civic-text-dark border-t-2 border-x border-[#14538F] -mb-px cursor-pointer';
+          panel.classList.remove('hidden');
+        } else {
+          btn.className = 'px-4 py-2.5 rounded-t-lg text-sm font-semibold text-slate-600 hover:text-[#0B3866] cursor-pointer';
+          panel.classList.add('hidden');
+        }
+      });
+    }
+
+    // TAB 1: ZALO PARSER + BẢNG SỬA TRỰC TIẾP
+    function fillSampleZaloText() {
+      document.getElementById('zaloInput').value = `THỨ HAI - 23/11/2026
+08:00 - 11:00 | Họp Ban Thường vụ Đảng ủy định kỳ tháng 11 | BTV Đảng ủy, Văn phòng Đảng ủy | Phòng họp tầng 2
+14:00 - 16:30 | Hội nghị chuyên đề Chuyển đổi số trong công tác Đảng | BCH Đảng bộ, Bí thư các chi bộ | Hội trường tầng 2
+
+THỨ BA - 24/11/2026
+08:00 - 11:00 | Kiểm tra công tác phát triển đảng viên tại Chi bộ KP 3 | Đ/c Phó Bí thư Thường trực, UBKT | Nhà văn hóa KP 3
+14:00 - 16:30 | Đồng chí Bí thư Đảng ủy tiếp công dân định kỳ | Đ/c Bí thư, Lãnh đạo UBND phường | Phòng Tiếp công dân`;
+      parseZaloText();
+    }
+
+    function loadCurrentToPreview() {
+      previewRows = (liveData.schedule || []).map((r) => ({ ...r }));
+      if (!previewRows.length) addEmptyPreviewRow();
+      renderEditablePreview();
+    }
+
+    function parseZaloText() {
+      const raw = document.getElementById('zaloInput').value.trim();
+      if (!raw) {
+        showToast('Vui lòng dán nội dung tin nhắn Zalo trước');
+        return;
+      }
+
+      const lines = raw.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
+      let currentDay = 'LỊCH CÔNG TÁC TUẦN';
+      const results = [];
+
+      lines.forEach((line) => {
+        const isDayHeader =
+          /^(THỨ\s+[A-ZÀ-Ỹ2-7]+|CHỦ\s+NHẬT|NGÀY\s+\d)/i.test(line) &&
+          !line.includes('|') &&
+          !/^\d{1,2}[:h]\d{0,2}/i.test(line);
+
+        if (isDayHeader) {
+          currentDay = line.replace(/^[-*•\s]+/, '').toUpperCase();
+          return;
+        }
+
+        if (line.includes('|')) {
+          const p = line.split('|').map((s) => s.trim());
+          results.push({
+            day: currentDay,
+            time: p[0] || '',
+            content: p[1] || '',
+            participants: p[2] || '',
+            note: p[3] || '',
+          });
+          return;
+        }
+
+        const timeMatch = line.match(
+          /^[-*•]?\s*(\d{1,2}[:h]\d{0,2}(?:\s*[-–đến]+\s*\d{1,2}[:h]\d{0,2})?|Sáng|Chiều|Cả ngày)\s*[:\-–]?\s*(.+)$/i
+        );
+        if (timeMatch) {
+          let rest = timeMatch[2].trim();
+          let participants = '';
+          let note = '';
+
+          const tp = rest.match(/(?:TP|Thành phần)\s*:\s*([^.;\n]+)/i);
+          if (tp) { participants = tp[1].trim(); rest = rest.replace(tp[0], '').trim(); }
+
+          const dd = rest.match(/(?:ĐĐ|Địa điểm|Ghi chú)\s*:\s*([^.;\n]+)/i);
+          if (dd) { note = dd[1].trim(); rest = rest.replace(dd[0], '').trim(); }
+
+          results.push({
+            day: currentDay,
+            time: timeMatch[1].trim(),
+            content: rest.replace(/^[-–.;,\s]+|[-–.;,\s]+$/g, ''),
+            participants,
+            note,
+          });
+        }
+      });
+
+      if (!results.length) {
+        showToast('Chưa nhận diện được dòng lịch. Hãy dùng dấu "|" để ngăn cách các cột.');
+        return;
+      }
+
+      previewRows = results;
+      renderEditablePreview();
+    }
+
+    function renderEditablePreview() {
+      const box = document.getElementById('zaloPreviewBox');
+      const tbody = document.getElementById('zaloEditableBody');
+      document.getElementById('zaloParsedCount').textContent = previewRows.length;
+      box.classList.remove('hidden');
+
+      tbody.innerHTML = previewRows
+        .map(
+          (row, idx) => `
+          <tr>
+            <td class="p-1.5"><input value="${escapeHtml(row.day)}" onchange="previewRows[${idx}].day=this.value" class="w-full border border-slate-200 rounded px-2 py-1 text-xs font-bold civic-text-dark" /></td>
+            <td class="p-1.5"><input value="${escapeHtml(row.time)}" onchange="previewRows[${idx}].time=this.value" class="w-full border border-slate-200 rounded px-2 py-1 text-xs font-semibold civic-text-primary" /></td>
+            <td class="p-1.5"><input value="${escapeHtml(row.content)}" onchange="previewRows[${idx}].content=this.value" class="w-full border border-slate-200 rounded px-2 py-1 text-xs" /></td>
+            <td class="p-1.5"><input value="${escapeHtml(row.participants)}" onchange="previewRows[${idx}].participants=this.value" class="w-full border border-slate-200 rounded px-2 py-1 text-xs" /></td>
+            <td class="p-1.5"><input value="${escapeHtml(row.note)}" onchange="previewRows[${idx}].note=this.value" class="w-full border border-slate-200 rounded px-2 py-1 text-xs" /></td>
+            <td class="p-1.5 text-center"><button onclick="removePreviewRow(${idx})" class="text-rose-600 hover:text-rose-800 font-bold cursor-pointer">✕</button></td>
+          </tr>
+        `
+        )
+        .join('');
+    }
+
+    function addEmptyPreviewRow() {
+      const lastDay = previewRows.length ? previewRows[previewRows.length - 1].day : 'THỨ HAI - 23/11/2026';
+      previewRows.push({ day: lastDay, time: '08:00 - 11:00', content: '', participants: '', note: '' });
+      renderEditablePreview();
+    }
+
+    function removePreviewRow(idx) {
+      previewRows.splice(idx, 1);
+      renderEditablePreview();
+    }
+
+    async function pushScheduleToCloud() {
+      const validRows = previewRows.filter((r) => r.day.trim() || r.content.trim());
+      if (!validRows.length) {
+        showToast('Danh sách lịch đang trống');
+        return;
+      }
+
+      const btn = document.getElementById('btnPushSchedule');
+      btn.disabled = true;
+      btn.textContent = '⏳ Đang đẩy lên Google Sheets...';
+
+      try {
+        await postToCloudApi({ schedule: validRows });
+        showToast('✔ Đã đẩy lịch thành công lên Google Sheets & TV!');
+        await fetchLiveSchedule(false);
+        closeAdminModal();
+      } catch (err) {
+        showToast(`Lỗi đẩy dữ liệu: ${err.message}`);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '☁ Đẩy lên Google Sheets & TV';
+      }
+    }
+
+    // TAB 2: LƯU CẤU HÌNH CHÀO MỪNG & THÔNG BÁO LÊN GOOGLE SHEETS
+    async function pushConfigToCloud() {
+      const btn = document.getElementById('btnPushConfig');
+      btn.disabled = true;
+      btn.textContent = '⏳ Đang lưu lên Google Sheets...';
+
+      const newConfig = {
+        Tuan: document.getElementById('inpCloudTuan').value.trim(),
+        ThongBaoChay: document.getElementById('inpCloudMarquee').value.trim(),
+        CheDoChaoMung: document.getElementById('inpCloudWelcomeMode').checked ? 'TRUE' : 'FALSE',
+        TieuDeChaoMung: document.getElementById('inpCloudWelcomeTitle').value.trim(),
+        NoiDungChaoMung: document.getElementById('inpCloudWelcomeSub').value.trim(),
+      };
+
+      try {
+        await postToCloudApi({ config: newConfig });
+        manualWelcomeOverride = null; // Trả quyền điều khiển về Google Sheets
+        showToast('✔ Đã lưu cấu hình lên Google Sheets!');
+        await fetchLiveSchedule(false);
+        closeAdminModal();
+      } catch (err) {
+        showToast(`Lỗi lưu cấu hình: ${err.message}`);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '☁ Lưu lên Google Sheets';
+      }
+    }
+
+    // TAB 3: LƯU CÀI ĐẶT CỤC BỘ
+    function saveLocalSettings() {
+      localSettings.apiUrl = document.getElementById('cfgApiUrl').value.trim() || DEFAULT_API_URL;
+      localSettings.secretToken = document.getElementById('cfgSecretToken').value.trim() || DEFAULT_SECRET_TOKEN;
+      localSettings.bgPosY = parseInt(document.getElementById('cfgBgPosY').value, 10);
+      localSettings.overlayDarkness = parseInt(document.getElementById('cfgOverlayDarkness').value, 10);
+      localSettings.scrollSpeed = parseInt(document.getElementById('cfgScrollSpeed').value, 10) || 30;
+
+      saveLocalSettingsToStorage();
+      applyHeaderVisuals(localSettings.bgPosY, localSettings.overlayDarkness, localSettings.theme);
+      showToast('Đã lưu cài đặt API & Giao diện!');
+      fetchLiveSchedule(false);
+      closeAdminModal();
+    }
+
+    function showToast(msg) {
+      const box = document.getElementById('toastBox');
+      document.getElementById('toastMessage').textContent = msg;
+      box.classList.remove('opacity-0', '-translate-y-3');
+      box.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        box.classList.add('opacity-0', '-translate-y-3');
+        box.classList.remove('opacity-100', 'translate-y-0');
+      }, 3200);
+    }
+
+    // =========================================================================
+    // 7. KHỞI TẠO HỆ THỐNG
+    // =========================================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      applyTheme(localSettings.theme);
+      loadHeaderImageSource();
+      renderAllFromLiveData();
+      updateClockAndMaintenance();
+
+      // Đồng bộ ngay khi mở trang và tự động mỗi 60 giây
+      fetchLiveSchedule(false);
+      setInterval(() => fetchLiveSchedule(false), 60000);
+
+      // Cập nhật đồng hồ mỗi giây
+      setInterval(updateClockAndMaintenance, 1000);
+
+      // Dừng cuộn khi rê chuột vào bảng
+      const viewport = document.getElementById('scheduleViewport');
+      viewport.addEventListener('mouseenter', () => {
+        isHoverPaused = true;
+        if (shouldScroll) document.getElementById('pauseIndicator').classList.remove('opacity-0');
+      });
+      viewport.addEventListener('mouseleave', () => {
+        isHoverPaused = false;
+        document.getElementById('pauseIndicator').classList.add('opacity-0');
+      });
+
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(renderScheduleTable, 200);
+      });
+
+      requestAnimationFrame(animationLoop);
+    });
+  </script>
+</body>
+</html>
